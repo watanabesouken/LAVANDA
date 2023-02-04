@@ -1,0 +1,240 @@
+{% if section.settings.show_instagram %}
+
+{{ 'instafeed.min.js' | asset_url | script_tag }}
+
+<section class="home-instagram instagram home-custom-instagram" id="new-instagram-{{section.id}}">
+    <div class="container">
+        {% if section.settings.images_per_row == '5' %}
+        {% assign column_size = 5 %}
+        {% else %}
+        {% assign column_size = 12 | divided_by: section.settings.images_per_row %}
+        {% endif %}
+        
+        {% if section.settings.instagram_title != blank %}
+        <div class="widget-title{% if section.settings.title_style == 'style_2' %} not-before{% endif %}">   
+            <h3 class="box-title">
+                <span class="title"> 
+                <i class="fa fa-instagram fa-lg" aria-hidden="true"></i>
+                {% include 'multilang' with section.settings.instagram_title %}
+                </span>
+            </h3>
+            {% if section.settings.instagram_des != blank %}
+                <p>
+                    {% include 'multilang' with section.settings.instagram_des %}
+                </p>        
+            {% endif %}
+        </div>
+        {% endif %}
+        <div id="instafeed" class="row instagram-grid" data-instagram-feed data-limit="{{ section.settings.limit }}" data-rows="{{ section.settings.images_per_row }}"></div>
+        <div class="infinite-scrolling-instagram">
+            <a href="javascript:void(0)">
+                <svg id="icon-plus-instagram" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                     viewBox="0 0 42 42" xml:space="preserve">
+                    <polygon points="42,19 23,19 23,0 19,0 19,19 0,19 0,23 19,23 19,42 23,42 23,23 42,23 "/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+<style>
+
+    {% assign instagram_bg =  section.settings.instagram_bg %}
+
+
+    #new-instagram-{{section.id}} {
+        padding-top: 40px;
+    }
+        
+    #new-instagram-{{section.id}},
+    #new-instagram-{{section.id}} .widget-title .box-title .title {
+        background-color: {{ instagram_bg }};
+    }
+    .home-custom-instagram .infinite-scrolling-instagram a svg{
+        fill: {{  section.settings.icon_plus_instagram }};
+    }
+
+</style>
+
+<script>
+    $(document).ready(function() {
+      var column = 'col-6 col-md-4 col-lg-{{column_size}}';
+      var toshow = '{{ section.settings.images_per_row }}';
+        var instagramBlock = $('[data-instagram-feed]');
+
+        instagramBlock.each(function() {
+            
+            var self = $(this),
+                dataRows = self.data('rows'),
+                dataLimit = self.data('limit'),
+
+                item_instagram = self.find('.instagram-grid');
+
+            $('.infinite-scrolling-instagram a').click(function (e) {   
+                e.preventDefault();
+
+                if (self.find('.item-grid:hidden').length > 0) {
+                    self.find('.item-grid:hidden:lt(' + toshow + ')').each(function () {
+                        $(this).show();
+                    });
+                };
+
+                if(!self.find('.item-grid:hidden').length){
+                    $('.infinite-scrolling-instagram a').css('opacity','0.5');
+                };
+
+            });
+                
+            var feed = new Instafeed({
+                get: "user",   
+                {% if section.settings.accessToken != blank %}
+                userId: {{ section.settings.accessToken | split: '.' | first  }},
+                accessToken: '{{ section.settings.accessToken }}', 
+                {% else %}
+                accessToken: '12156328409.1677ed0.10d7d8b52fe44349aaf482d0e299c28b',
+                userId: 8944927192,
+                {% endif %}
+                resolution: "{{ section.settings.resolution_images }}",
+                clientId: "c6e4c736e82345a3898a0e299daa00fb",
+                template: '<a class="item item-grid animate-hvr ' + column + '" href="{% raw %}{{link}}{%endraw%}" target="_blank"><img data-src="{%raw%}{{image}}{%endraw%}" class="lazyload" data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]" data-sizes="auto"/></a>',
+                get limit() {
+                    return limit = dataLimit.toString();          
+                },          
+
+                after: function() {
+                    self.find('a').attr({
+                        target: "_blank"
+                    });  
+                    self.find('a').hide();
+                    self.find('a').each(function(i) {
+                        if(i < toshow){
+                             $(this).show();   
+                        }
+                    });
+                }
+            });
+
+            feed.run();
+        });
+    });
+</script>
+
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Home Custom Instagram",
+    "class": "home-instagram-sections",
+    "settings": [
+        {
+            "type": "checkbox",
+            "id": "show_instagram",
+            "label": "Enable",
+            "default": true
+        },
+        {
+            "type" : "color",
+            "id" : "instagram_bg",
+            "label" : "Background Color",
+            "default" : "#fff"
+        },
+        {
+            "type": "textarea",
+            "id": "instagram_title",
+            "label": "Title",
+            "default": "#Ella On Instagram"
+        },
+        {
+            "type": "textarea",
+            "id": "instagram_des",
+            "label": "Instagram Description",
+            "default": "Phasellus lorem malesuada ligula pulvinar commodo maecenas"
+        },
+        {
+            "type": "select",
+            "id": "title_style",
+            "label": "Title Style:",
+
+            "options": [
+                {
+                    "value": "style_1",
+                    "label": "Style 1" 
+                },
+                { 
+                    "value": "style_2",
+                    "label": "Style 2" 
+                }          
+            ],
+            "default": "style_1"
+        },
+        {
+            "type": "text",
+            "id": "accessToken",
+            "label": "Access Token",
+            "default": "12156328409.1677ed0.10d7d8b52fe44349aaf482d0e299c28b",
+            "info": "Required to use when Get Image from: 'User'.[Where do I find Access Token?](http:\/\/instagram.pixelunion.net/)"
+        },
+        {
+            "type": "text",
+            "id": "limit",
+            "label": "Limit the number of images to show",
+            "default": "100"
+        },
+        {
+            "type": "select",
+            "id": "images_per_row",
+            "label": "Images per row",
+            "options": [
+                {
+                    "value": "3",
+                    "label": "3"
+                },
+                {
+                    "value": "4",
+                    "label": "4"
+                },
+                {
+                    "value": "5",
+                    "label": "5"
+                },
+                {
+                    "value": "6",
+                    "label": "6"
+                }
+            ],
+            "default": "4"
+        },
+        {
+            "type": "select",
+            "id": "resolution_images",
+            "label": "Resolution of images",
+            "options": [
+            {
+                "value": "thumbnail",
+                "label": "Thumbnail"
+            },
+            {
+                "value": "low_resolution",
+                "label": "Low Resolution"
+            },
+            {
+                "value": "standard_resolution",
+                "label": "Standard Resolution"
+            }
+            ]
+        },
+        {
+            "type" : "color",
+            "id" : "icon_plus_instagram",
+            "label" : "Icon Plus Color",
+            "default" : "#3c3c3c"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Custom Instagram",
+            "category": "Instagram"
+        }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,16 @@
+<div class="digital-exhibition" id="digi-ex">
+  <div class="content">
+    <p class="close" id="digi-close">✕</p>
+    <a href="https://lavanda.jp/blogs/news/limited-popup-store">
+    <img src="{{ "popup.png" | asset_url }}" alt="">
+    </a>
+  </div>
+</div>
+
+<script>
+  var element = document.getElementById( "digi-close" );
+  element.onclick = function() {
+    var target = document.getElementById( "digi-ex" );
+    target.classList.toggle('digi-none');
+  }
+</script>

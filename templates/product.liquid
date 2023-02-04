@@ -1,0 +1,49 @@
+{%- if product.type == 'ノベルティー' -%}
+  <meta http-equiv="refresh" content="0;URL='{{shop.url}}'" />
+{%- endif -%}
+
+
+{%- if product.type != 'ノベルティー' -%}
+
+{% include 'elspw_product' %}
+{% if settings.product_layout == "default" %} 
+
+{% include 'product-default' %}
+
+{% elsif settings.product_layout == "grouped" %}
+
+{% include 'product-grouped' %}
+
+{% elsif settings.product_layout == "slider" %}
+
+{% include 'product-slider' %}
+
+{% elsif settings.product_layout == "gallery" %}
+
+{% include 'product-gallery' %}
+
+{% elsif settings.product_layout == "full_with" %}
+
+{% include 'product-full-width' %}
+
+{% endif %}
+
+
+
+
+
+{% if template contains 'product' %}
+
+<div class="footbar-fixed footbar-fixed-product">
+    {% section 'someone-purchased' %}
+    {% section 'GDPR-modal' %}
+
+    {% if settings.display_sticky %} 
+        {% include 'sticky-add-to-cart' %}
+    {% endif %}
+</div>
+{% endif %}
+
+
+
+{%- endif -%}

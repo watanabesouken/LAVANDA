@@ -1,0 +1,18 @@
+{{ '//reginapps.com/limitsify/themes/alertify/lib/alertify.min.js' | script_tag }}
+{{ '//reginapps.com/limitsify/themes/alertify/themes/alertify.core.css' | stylesheet_tag }}
+{{ '//reginapps.com/limitsify/themes/alertify/themes/alertify.bootstrap.css' | stylesheet_tag }}
+{{ '//reginapps.com/limitsify/javascripts/limitsify.min.js?1' | script_tag }}
+
+<script>
+  if (typeof limitsifyTheme === 'undefined') {
+    var limitsifyTheme = new Limitsify.AlertifyBootstrapAdapter();
+
+    var limitsifyClient = new Limitsify({
+      apiToken: '{{ shop.metafields.limitsify.authentication_token }}',
+      cart: {{ cart | json }},
+      theme: limitsifyTheme,
+      rememberButtonLabels: false,
+      settings: '{{shop.metafields.limitsify.config }}'
+    });
+  }
+</script>

@@ -1,0 +1,59 @@
+<ul class="lookbook-items">
+  {% for block in section.blocks %}  
+  <li class="lookbook-item" id="call-to-action">   
+    <a href="{{ block.settings.lookbook-url }}" class="btn">
+      <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/{{ block.settings.lookbook-img }}" alt="">
+      <p>{{ block.settings.lookbook-ttl }}</p>
+    </a>
+  </li> 
+  {% endfor %}
+</ul>
+
+{% schema %}
+{
+  "name": "LOOK BOOK PRODUCT",
+  "blocks": [
+    {
+      "type": "select",
+      "name": "LOOK BOOK",
+      "settings": [
+        {
+          "id": "lookbook-ttl",
+          "type": "text",
+       	  "label": "タイトル"
+        },
+        {
+          "id": "lookbook-img",
+          "type": "image_picker",
+          "label": "画像"
+        },
+        {
+          "id": "lookbook-url",
+          "type": "url",
+          "label": "リンク"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Call to Action Blocks",
+      "category": "CTA button",
+      "blocks": [
+        { 
+          "type": "select"
+        },
+        {
+          "type": "select"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

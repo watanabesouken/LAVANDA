@@ -1,0 +1,158 @@
+<div class="page-tpl" style="margin-bottom: -105px;">
+  <div class="container fix no-margin">
+    {% include 'breadcrumb' %}
+
+    <header class="page-header">
+      <h2>
+        {% include 'multilang' with page.title %}
+      </h2>      
+    </header>
+
+    {% if settings.enable_multilang and page.content contains '[lang2]' %}
+    <div class="rte lang1">
+      {{ page.content | split: '[lang2]' | first }}
+    </div>
+    <div class="rte lang2">
+      {{ page.content | split: '[lang2]' | last }}
+    </div>
+    {% else %}
+    <div class="rte">
+      {{ page.content | split: '[lang2]' | first }}
+    </div>
+    {% endif %}
+    
+    <div class="feature" style="background-image:url(https://cdn.shopify.com/s/files/1/0322/8116/5869/files/01800b.jpg?v=1582923082);">
+      <div class="inner">
+        <div class="date">MAR.01.2020</div>
+        <div class="title">2020 SUMMER<br>COORDINATE</div>
+        <div class="intro">～夏の大人カジュアル～</div>
+      </div>
+    </div>
+    
+    <div class="cbox clearfix c1">
+      <div class="left">
+      	<img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/02110a.jpg?v=1582918628" alt="">
+        <span>
+          COORDINATE<br>01
+          <br class="extend">
+          <h4>SKIRT</h4>
+        </span>
+      </div>
+      <div class="right">
+        <span>
+          贅沢なボリュームのコットンレーススカートとツヤのあるトップスがモノトーンでも女性らしい印象にしてくれる。
+          パーカーとスニーカーで“トレンド”感を演出。さらにバイカラーのトートバックがコーディネートにメリハリを。
+          
+          <a class="title" href="/products/asymmetrical-ruffled-skirt">アシメフリルスカート ¥8,500+tax</a><br>
+          <a href="/products/asymmetrical-ruffled-skirt">MORE DETAIL</a>
+        </span>
+        <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/682ab1f63cb734b0f0f0e09026d41d22_34b4cbd8-e12a-405d-b673-2b21824a75ab.jpg?v=1583039181" alt="">
+      </div>
+    </div>
+    
+    <div class="cbox2 clearfix c2">
+      <div class="left">
+      	<img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/01567a_2.jpg?v=1583040080" alt="">
+        <span>
+          COORDINATE<br>02
+          <br class="extend">
+          <h4>COAT</h4>
+        </span>
+      </div>
+      <div class="right">
+        <span>
+          ピンクベージュのワントーンコーデで大人オーラUP。
+          リラックス感のあるシルエット合わせが上品に仕上げてくれる。
+          
+          <a class="title" href="/products/shiny-trench-coat">シャイニートレンチコート ¥15,800+tax</a><br>
+          <a href="/products/shiny-trench-coat">MORE DETAIL</a>
+        </span>
+        <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/865fa3ae358e4235c021e239c235c8af.jpg?v=1582917419" alt="">
+      </div>
+    </div>
+    
+    <div class="cbox clearfix c1 fix">
+      <div class="left">
+      	<img class="fix" src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/465415993055e0c6307638f4a30fce91_78ae26ae-d0d4-4c7f-8e6f-433ba16bf1e3.jpg?v=1583039181" alt="">
+        <span class="fix">
+          COORDINATE<br>03
+          <br class="extend fix">
+          <h4>TOPS</h4>
+        </span>
+      </div>
+      <div class="right">
+        <img class="fix" src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/01291a.jpg?v=1582918629" alt="">
+        <span class="fix">
+          シンプルコーデにトレンドのレオパード、マーメイドラインが際立つ。レオパード柄の強さもサテンの光沢感が緩和してくれる。
+          女ムード漂うバックシャンにも注目
+          
+          <a class="title" href="/products/back-ribbon-cut-tops">BACKリボンカットトップス ￥6,800+tax</a><br>
+          <a href="/products/back-ribbon-cut-tops">MORE DETAIL</a>
+        </span>
+      </div>
+    </div>
+    
+<!--     <div class="cbox clearfix c3">
+      <div class="left">
+      	<img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/465415993055e0c6307638f4a30fce91.jpg?v=1582917419" alt="">
+        <span>
+          COORDINATE<br>03
+          <br class="extend">
+          <h4>TOPS</h4>
+          シンプルコーデにトレンドのレオパード、マーメイドラインが際立つ。レオパード柄の強さもサテンの光沢感が緩和してくれる。
+          女ムード漂うバックシャンにも注目。
+          
+          <a class="title" href="/products/back-ribbon-cut-tops">BACKリボンカットトップス ￥6,800+tax</a><br>
+          <a href="/products/back-ribbon-cut-tops">MORE DETAIL</a>
+        </span>
+      </div>
+      <div class="right">
+        <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/01291a.jpg?v=1582918629" alt="">
+      </div>
+    </div> -->
+    
+    <div class="cbox2 clearfix c4">
+      <div class="left">
+      	<img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/02346a.jpg?v=1582918628" alt="">
+        <span>
+          COORDINATE<br>04
+          <br class="extend">
+          <h4>ONE PIECE</h4>
+        </span>
+      </div>
+      <div class="right">
+        <span>
+          キャップやTシャツ合わせのカジュアルコーデもフィット&フレアのシルエットでフェミニンな印象に。
+          サイドのシフォンの軽やかさとキャップ合わせで抜け感が好バランス。
+          
+          <a class="title" href="/products/side-gather-one-piece">サイドギャザーワンピース ￥14,800+tax</a><br>
+          <a href="/products/side-gather-one-piece">MORE DETAIL</a>
+        </span>
+        <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/c07dd541f0da5dd1d4dd34e4b4382612.jpg?v=1582917419" alt="">
+      </div>
+    </div>
+    
+    <div class="cbox clearfix c5">
+      <div class="left">
+      	<img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/02474a2.jpg?v=1583041425" alt="">
+        <span>
+          COORDINATE<br>05
+          <br class="extend">
+          <h4>ROMPERS</h4>
+        </span>
+      </div>
+      <div class="right">
+        <span>
+          美脚効果抜群のロンパースとTシャツのレイヤードでスタイルアップとこなれ感を手に入れて。
+          シックなカラーでまとめたスタイリングをラフィアハットで華やかに。
+          
+          <a class="title" href="/products/back-cross-rompers">BACKクロスロンパース ¥12,800+tax</a><br>
+          <a href="/products/back-cross-rompers">MORE DETAIL</a>
+        </span>
+        <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/BACK.jpg?v=1583039181" alt="">
+      </div>
+    </div>
+    
+    
+  </div>
+</div>

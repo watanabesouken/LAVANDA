@@ -1,0 +1,97 @@
+{% if section.settings.blog_post != blank %}
+  {% assign limit = section.settings.blog_post %}
+{% elsif blog.handle == "news" %}
+  {% assign limit = 3 %}
+{% elsif blog.handle == "snap" %}
+  {% assign limit = 12 %}
+{% endif %}
+
+
+{% paginate blog.articles by limit %}
+
+<div class="content-blog blog-default">
+  {% unless blog.handle == "news" %}
+  <div class="snap-menu">
+    <ul>
+      <li><a href="/blogs/{{ blog.handle }}" class="{% if current_tags.first == null %}active{% endif %}"><p>ALL</p></a></li>
+      <li><a href="/blogs/{{ blog.handle }}/tagged/152" class="{% if current_tags.first == "152" %}active{% endif %}"><p>~152cm</p></a></li>
+      <li><a href="/blogs/{{ blog.handle }}/tagged/153-158" class="{% if current_tags.first == "153-158" %}active{% endif %}"><p>153~158cm</p></a></li>
+      <li><a href="/blogs/{{ blog.handle }}/tagged/159-164" class="{% if current_tags.first == "159-164" %}active{% endif %}"><p>159~164cm</p></a></li>
+      <li><a href="/blogs/{{ blog.handle }}/tagged/165" class="{% if current_tags.first == "165" %}active{% endif %}"><p>165cm~</p></a></li>
+     <li><a href="/blogs/{{ blog.handle }}/tagged/mens" class="{% if current_tags.first == "mens" %}active{% endif %}"><p>MENS</p></a></li>
+    </ul>
+  </div>
+  {% endunless %}
+
+  {% if blog.handle == "news" %}
+  <ul class="list-blog">    
+    {% for article in blog.articles %}
+    {% include 'blog-item' %}
+    {% endfor %}
+  </ul>
+  {% else %}
+  <ul class="list-blog snap-item">
+    {% include "test" %}
+  </ul>
+  {% endif %}
+  
+  {% if paginate.pages > 1 %}
+  {% include 'pagination' %}
+  {% endif %}
+</div>
+{% endpaginate %}
+
+
+<style>
+  .halo-blog-content .article-details .article-excerpt {
+    text-align: {{ section.settings.blog_text_align }};
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "Blog Default",
+	"class": "col-12 col-xl-9 col-main",
+    "settings": [      
+      {
+        "type": "text",
+        "id": "blog_post",
+        "label": "Blog post per page",
+        "default": "3"
+      },
+      {
+        "type": "select",
+        "id": "blog_text_align",
+        "label": "Blog Text Align",
+        "options": [
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "default": "left",
+        "info": "Default Value: Left"
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_show_author",
+        "label": "Show author",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_show_date",
+        "label": "Show date",
+        "default": true
+      }
+    ]
+  }
+{% endschema %}

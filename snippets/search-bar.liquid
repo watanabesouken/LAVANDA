@@ -1,0 +1,106 @@
+<div class="search-form" data-ajax-search>
+    <div class="header-search">
+        <div class="header-search__form">
+            <a href="javascript:void(0)" title="close" class="close close-search">
+                {% include 'icon-close' %}
+            </a>
+
+            <form action="/search" method="get" class="search-bar" role="search">
+                <input type="hidden" name="type" value="product">
+
+                <input type="search" name="q" 
+                    {% if settings.enable_multilang %} data-translate="general.search.placeholder" translate-item="placeholder"{% endif %} 
+                    placeholder="{{ 'general.search.placeholder' | t }}" 
+                    class="input-group-field header-search__input" aria-label="Search Site" autocomplete="off">
+        
+                <button type="submit" class="btn icon-search">
+                    {% include 'icon-search' %}
+                </button>
+            </form>       
+        </div>
+    </div>
+  
+    {% capture search %}
+        {% raw %}{{#if is_loading}}{% endraw %}
+        <div class="header-search__results">
+            <div class="header-search__spinner-container">
+                <div class="loading-modal modal"><div></div><div></div><div></div><div></div></div>
+            </div>
+        </div>
+
+        {% raw %}{{else}}{% endraw %}
+
+        {% raw %}{{#if is_show}}{% endraw %}
+        <div class="header-search__results header-block">
+            {% raw %}
+            {{#if has_results}}
+            <div class="box-title">
+                Product Results
+            </div>
+
+            <div class="search__products">
+                <div class="products-grid row">
+                    {{#each results}}
+
+                    <div class="grid-item col-6 col-sm-4">
+                        <div class="inner product-item">
+                            <div class="inner-top">
+                                <div class="product-top">
+                                    <div class="product-image">
+                                        <a href="{{url}}" class="product-grid-image">
+                                            <img src="{{image}}" alt="{{image_alt}}">                                               
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="product-bottom">
+                                    <div class="product-vendor">
+                                        {{vendor}}
+                                    </div>
+
+                                    <a class="product-title" href="{{url}}">
+                                        {{title}}
+                                    </a>
+
+                                    <div class="price-box">
+                                        {{#if on_sale}}
+                                        <div class="price-sale">
+                                            <span class="old-price">{{ compare_at_price }}</span>
+                                            <span class="special-price">
+                                                {{ price }}
+                                            </span>
+                                        </div>
+                                        {{else}}
+                                        <div class="price-regular">
+                                            <span>{{ price }}</span>
+                                        </div>
+                                        {{/if}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{/each}}
+                </div>              
+            </div>
+            
+            <div class="text-center">            
+                <a href="{{results_url}}" class="text-results header-search__see-more" data-results-count="{{results_count}}">
+                    {{results_label}} ({{results_count}})
+                </a>
+            </div>
+            {{else}}
+
+            <p class="header-search__no-results text-results">{{ results_label }}</p>
+            {{/if}}
+            {% endraw %}
+        </div>
+        {% raw %}{{/if}}{% endraw %}
+        {% raw %}{{/if}}{% endraw %}
+    {% endcapture %} 
+
+    <script id="search-results-template" type="text/template7">
+        {{search}}
+    </script>
+</div>

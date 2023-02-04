@@ -1,0 +1,119 @@
+<a class="mordal-image_button" id="mordal-image">{{ section.settings.wash_icon_text }}</a>
+
+<div id="mordal-window_image" class="mordal-window_image">
+  <div class="mordal-container">
+    <p class="modal-title">{{ section.settings.wash_icon_text }}</p>
+    <div class="mordal-image">
+      <img src="{{ section.settings.wash_icon | img_url: "1000x" }}">
+    </div>
+    <a id="close-mordal-image">&times;</a>
+  </div>
+</div>
+
+<div id="mordal-window_size" class="mordal-window_size">
+  <div class="mordal-container">
+    <p class="modal-title">{{ section.settings.modal_page.title }}</p>
+    <div class="mordal-size">
+      {{ section.settings.modal_page.content }}
+    </div>
+    <a id="close-mordal-size">&times;</a>
+  </div>
+</div>
+
+<script type="text/javascript">
+  var mordal_button = document.getElementById('mordal-image');
+  var mordal_window_image = document.getElementById('mordal-window_image');
+  var close_mordal_button = document.getElementById('close-mordal-image');
+  mordal_button.addEventListener('click', function() {
+    mordal_window_image.classList.add('open');
+    document.body.style.overflow = "hidden";
+    document.body.style.height = "100vh";
+  });
+  close_mordal_button.addEventListener('click', function() {
+    mordal_window_image.classList.remove('open');
+    document.body.style.overflow = "auto";
+    document.body.style.height = "auto";
+  });
+  
+  document.addEventListener("DOMContentLoaded", function(){
+    var mordal_size_button = document.getElementById('size_guide_button');
+    var mordal_window_size = document.getElementById('mordal-window_size');
+    var close_mordal_button_size = document.getElementById('close-mordal-size');
+    mordal_size_button.addEventListener('click', function() {
+      mordal_window_size.classList.add('open');
+      document.body.style.overflow = "hidden";
+      document.body.style.height = "100vh";
+    });
+    close_mordal_button_size.addEventListener('click', function() {
+      mordal_window_size.classList.remove('open');
+      document.body.style.overflow = "auto";
+      document.body.style.height = "auto";
+    });
+  });
+</script>
+
+<style>
+  .mordal-image_button,
+  #close-mordal-image,
+  #size_guide_button,
+  #close-mordal-size {
+    cursor: pointer;
+  }
+  .mordal-window_image,
+  .mordal-window_size {
+    display: none;
+  }
+  .mordal-window_image.open,
+  .mordal-window_size.open {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 9999;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+  }
+  .mordal-container {
+    width: 70%;
+    height: 100%;
+    margin: 0 auto;
+    background: #fff;
+    padding: 100px 50px 0;
+    position: relative;
+  }
+  .mordal-container .modal-title {
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 40px;
+  }
+  .mordal-container .mordal-image,
+  .mordal-container .mordal-size {
+    overflow: scroll;
+    height: 100%;
+    position: relative;
+    background: #fff;
+  }
+  .mordal-container .mordal-image img {
+    width: 100%;
+  }
+  #close-mordal-image,
+  #close-mordal-size {
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    font-size: 30px;
+    padding: 18px 5px;
+  }
+  @media screen and (max-width: 768px) {
+    .mordal-container {
+      width: 100%;
+      padding: 30px 20px 0;
+    }
+    .mordal-container .mordal-image,
+    .mordal-container .mordal-size {
+      height: 90%;
+    }
+  }
+</style>

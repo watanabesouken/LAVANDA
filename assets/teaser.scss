@@ -1,0 +1,150 @@
+  html, body {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 62.5%;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  text-align: center;
+  background-image: url("https://cdn.shopify.com/s/files/1/0322/8116/5869/files/2022win_pc_background.jpg?v=1666784689");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center top;
+  overflow: hidden;
+}
+
+
+.bg-mask {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+
+.password-main__inner {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform:translateY(-50%);
+  height: 75vh;
+  display:flex;
+  flex-flow: column;
+  justify-content:space-between;
+}
+ .lavandalogo img{
+ width:15%;
+}
+
+.teaser-logo img{
+   width:40%;
+}
+.teaser-sublogo img{
+ width:30%;
+}
+.teaser-sublogo{
+ padding-bottom:30px;
+}
+
+
+#shopify-section-password-header, #shopify-section-password-footer {
+  display: none;
+}
+
+.password-main__inneradd {
+  position: absolute;
+  top: 66.7%;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+}
+
+
+.password_social {
+  width: 100%;
+  position: absolute;
+  bottom: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+}
+
+.icon_social {
+    list-style: none;
+    padding-right: 64px;
+    display: flex;
+    width: 30%;
+    margin: 0 auto;
+    justify-content: space-around
+}
+
+.icon_social li {
+  display: inline-block;
+  margin-right: 3rem;
+  padding: 0 1rem 0rem 1rem;  
+  top: 0;
+  left: 50%;
+}
+.icon_instagram{
+ 
+}
+.icon_social li a {
+  padding: 0rem 1rem 1rem 1rem;
+}
+
+.icon_instagram path, .icon_twitter path {
+  -webkit-transition: fill 0.3s ease-out;
+  -moz-transition: fill 0.3s ease-out;
+  -o-transition: fill 0.3s ease-out;
+  -ms-transition: fill 0.3s ease-out;
+  transition: fill 0.3s ease-out;
+}
+
+.icon_instagram a:hover path, .icon_twitter a:hover path,.icon_mail a:hover path ,.icon_line a:hover path{
+  fill: #fff;
+}
+
+  .icon_social li {
+    width: 7%;
+    margin-right: 50px; 
+  }
+
+  .icon_social li:nth-child(4){
+    margin-right:0;
+  }
+
+
+@media screen and (max-width:600px) {
+  html, body {
+  background-image: url("https://cdn.shopify.com/s/files/1/0322/8116/5869/files/2022win_sp_background.jpg?v=1666784689");
+  }
+     .lavandalogo img{
+      width:30%;
+       padding-top:20px;
+    }
+    .password-main__inner {
+      height: 70vh;
+     }
+     .teaser-logo img{
+      width:70%;
+     }
+     .teaser-sublogo img{
+      width:70%;
+     }
+    .icon_social {
+     padding-right: 60px;
+      width: 50%;
+   }
+  .icon_social li {
+     margin-right: 10px;
+     width: 15%;
+  }
+  .teaser-sublogo {
+    padding-bottom: 70px;
+  }
+ }

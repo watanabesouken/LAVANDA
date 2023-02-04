@@ -1,0 +1,132 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie9 no-js"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+<head>{% render 'pagefly-head' %}
+
+  <!-- Basic page needs ================================================== -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+  <!-- Title and description ================================================== -->
+  <title>
+  {{ page_title }}{% if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif %}{% if current_page != 1 %} &ndash; Page {{ current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}
+  </title>
+
+  {% if page_description %}
+  <meta name="description" content="{{ page_description | escape | split: '[/countdown]' | last | strip_html }}">
+  {% endif %}
+
+  <!-- Product meta ================================================== -->
+  {% include 'fb-open-graph-tags' %}
+  {% include 'twitter-card' %}
+
+  <!-- Helpers ================================================== -->
+  <link rel="canonical" href="{{ canonical_url }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, minimal-ui">
+  
+  <!-- Favicon -->
+  {% if settings.favicon != blank %}
+  <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
+  {% endif %}
+  
+  <!-- webcilip -->
+  <link rel="apple-touch-icon" href="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/apple-touch-icon.png?v=1615204912" sizes="180x180">
+<link rel="icon" type="image/png" href="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/android-touch-icon.png?v=1615204857" sizes="192x192">
+ 
+   <!-- fonts -->
+  {% include 'head_fonts' %}
+  
+  <!-- Styles -->
+  {% include 'head_styles' %}
+  
+   <!-- Scripts -->
+  {% include 'head_scripts' %}
+
+  <!-- Header hook for plugins ================================ -->
+  {{ content_for_header }}
+
+  <!--[if lt IE 9]>
+  {{ '//html5shiv.googlecode.com/svn/trunk/html5.js' | script_tag }}
+  <![endif]-->
+
+  {% comment %}
+    If you store has customers disabled, you can remove the following JS file
+  {% endcomment %}
+  
+  {% if template contains 'customers' %}
+    {{ 'shopify_common.js' | shopify_asset_url | script_tag }}
+    {{ 'customer_area.js'  | shopify_asset_url | script_tag }}
+  {% endif %}
+
+  {% include 'linked-options' %}
+  
+{% comment %}
+{% if template == "index" %}
+ {% include "popup" %}
+{% endif %}
+{% endcomment %}
+
+  
+{% include 'pagefly-header' %}
+  <link href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" rel="stylesheet">
+
+ </head> 
+ 
+{%- assign layout_class = 'body-full' -%}   
+
+<body id="{{ page_title | handle }}" class="{{ header_class }} {{ layout_class }} {% if template contains 'product' %}pdetail{% endif %} {% if template contains 'coordinate' or template contains 'yr_lavanda' %}special {% endif %} {% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}">
+    {% if template contains 'index' %}  
+    <h1 style="display: none">{{ page_title | split: '|' | first }}</h1>
+    {% endif %}
+    {% include 'wrapper-header' %}   
+	{% include 'scheme' %}
+    <div class="wrapper-container wrapper-body">	
+        <main class="main-content" role="main">      
+            {{ content_for_layout }}
+        </main>    
+            
+        {% section 'footer-5' %}
+
+    </div>
+    
+    {% include 'footer_scripts' %}
+    
+    {% include 'sweettooth-widgets' %}
+
+    {% include 'search-autocomplete' %}
+    
+    <div class="translate-header" data-translate-header>
+        {% include 'customer_links' %}
+        {% include 'wrapper-top-cart' %}
+    </div>
+            
+    {% include 'newsletter' %}      
+    
+ 
+    
+    <div class="wrapper-overlay"></div>
+
+   <!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '712850969378325');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=712850969378325&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+{% include 'limitsify' %}
+<script id="bc-script" type="text/javascript" charset="utf-8" src="https://connect.buyee.jp/0e440c2c62efe3f9103787410f305e0b6912722837d23848b813335dc8bf9c09/main.js" defer></script>
+	        </body>
+</html>

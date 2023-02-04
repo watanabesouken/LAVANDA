@@ -1,0 +1,573 @@
+{{ 'kokkaku.scss.css' | asset_url | stylesheet_tag }}
+<link rel="stylesheet" href="{{ 'style.css' | file_url }}">
+
+<div class="page-kokkaku">
+  <div class="container-kokkaku">  
+    
+    <div class="top">
+      <div class="top-img pc">
+        <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/kokkaku_pc.jpg?v=1609322962" alt="">
+      </div>
+      <div class="top-img sp">
+        <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/kokkaku_sp.jpg?v=1609322976" alt="">
+      </div>      
+      <div class="top-text text-center">
+        <p>
+          服選びの基準で重要なのは、
+          <br>体型よりも太ってもやせても変わらない「骨格」。
+          <br>服のデザインだけではなく、
+          <br>柄や素材まで骨格によって似合うものは変わります。
+          <br>骨格タイプ別のおすすめコーディネートを参考に
+          <br>「私に似合う」LAVANDAのアイテムを
+          <br>最短ルートで見つけませんか？
+        </p>
+      </div>
+<!--   骨格タイプ概要     -->
+      <div class="kokkaku-type-wrapper">
+		<!--    骨格ストレート      -->
+        <div class="straight text-center">
+          <div class="kokkaku-img text-center">
+            <a href="#straight">
+              <img  src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/kokkaku-straight.png?v=1609296522" alt="">
+            </a>
+          </div>
+          <div class="kokkaku-text-wrapper">
+            <div class="kokkaku-text text-center">
+              <h2>straight</h2>
+              <h3>骨格ストレート</h3>
+              <p>全体的に体にメリハリがある、
+                <br>いわゆるボン･キュ･ボンの
+                <br>グラマラス体型の方が多いタイプ。
+                <br>バストトップや腰位置が高く、
+                <br>身体全体に厚みがあるので、
+                <br>かなり細身な方でも華奢な
+                <br>印象にはならないことが特徴です。
+              </p>
+            </div>
+            <div class="check-button text-center relative">
+              <div class="straight-color">
+                <a href="#straight">CHECK</a>
+              </div>
+              <div class="check-button-shadow straight-color">
+              </div>
+            </div>
+          </div>
+        </div>
+		<!--    骨格ウェーブ      -->
+        <div class="wave">
+          <div class="kokkaku-img text-center pc">
+            <a href="#wave">
+              <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/kokkaku-wave.png?v=1609296532" alt="">         
+            </a>
+          </div>
+          <div class="kokkaku-text-wrapper">            
+            <div class="kokkaku-text text-center">
+              <h2>wave</h2>
+              <h3>骨格ウェーブ</h3>
+              <p>体が薄めで鎖骨が細く首が長め、
+                <br>全体的に華奢なタイプ。
+                <br>腰位置が低めで、特に下半身に
+                <br>脂肪がつきやすいのが特徴です。
+                <br>なだらかな曲線を描く薄くて
+                <br>華奢な体形をしているのが
+                <br>ウェーブタイプです。
+              </p>
+            </div>            
+            <div class="check-button text-center relative">
+              <div class="wave-color">
+                <a href="#wave">CHECK</a>
+              </div>
+              <div class="check-button-shadow wave-color">
+              </div>              
+            </div>
+          </div>
+          <div class="kokkaku-img text-center sp">
+            <a href="#wave">
+              <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/kokkaku-wave.png?v=1609296532" alt="">         
+            </a>
+          </div>
+        </div>
+		<!--    骨格ナチュラル      -->
+        <div class="natural">
+          <div class="kokkaku-img text-center">
+            <a href="#natural">
+              <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/kokkaku-natural.png?v=1609296538" alt="">
+            </a>
+          </div>
+          <div class="kokkaku-text-wrapper">            
+            <div class="kokkaku-text text-center pc">
+              <h2>natural</h2>
+              <h3>骨格ナチュラル</h3>
+              <p>全体的に重心の偏りがなく、
+                <br>手足長めのモデル体型さんが多いタイプ。
+                <br>肩や手首、関節などの骨が
+                <br>しっかり出るのが特徴です。
+                <br>骨格のフレーム感が際立つ
+                <br>スタイリッシュな体形を
+                <br>しているのがナチュラルタイプです。
+              </p>
+            </div>   
+            <div class="kokkaku-text text-center sp">
+              <h2>natural</h2>
+              <h3>骨格ナチュラル</h3>
+              <p>全体的に重心の偏りがなく、
+                <br>手足長めのモデル体型さんが
+                <br>多いタイプ。
+                <br>肩や手首、関節などの骨が
+                <br>しっかり出るのが特徴です。
+                <br>骨格のフレーム感が際立つ
+                <br>スタイリッシュな体形を
+                <br>しているのがナチュラルタイプです。
+              </p>
+            </div>               
+            <div class="check-button text-center relative">
+              <div class="natural-color">
+                <a href="#natural">CHECK</a>
+              </div>
+              <div class="check-button-shadow natural-color">
+              </div>              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+<!--   骨格タイプ詳細     -->
+    <div class="kokkaku-description-wrapper">
+		<!--    骨格ストレート      -->
+      <div class="straight">
+        <div class="title text-center">
+          <a id="straight"><img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/straight-title.jpg?v=1608841413" alt=""></a>
+        </div>
+        <div class="fashion-point text-center">
+          <div class='row'>
+            <div class='column'>
+              <div class="neck pc">
+                <h2>首元</h2>
+                <p>胸元をスッキリ縦に開ける。
+                  <br>VネックUネックがおすすめ。
+                  <br>詰まりすぎは着太りの原因に。
+                </p>
+              </div>
+              <div class="neck sp">
+                <h2>首元</h2>
+                <p>胸元をスッキリ縦に開ける。VネックUネックがおすすめ。
+                  <br>詰まりすぎは着太りの原因に。
+                </p>
+              </div>
+            </div>
+            <div class='column'>
+              <div class="cordinate pc">
+                <h2>コーディネート</h2>
+                <p>コーディネートは縦長のIラインを作ると、
+                  <br>厚みのある身体をスッキリと見せることができ、
+                  <br>あか抜けた着こなしに。
+                </p>
+              </div>
+              <div class="cordinate sp">
+                <h2>コーディネート</h2>
+                <p>コーディネートは縦長のIラインを作ると、厚みのある身体を
+                  <br>スッキリと見せることができ、あか抜けた着こなしに。
+                </p>
+              </div>              
+            </div>
+          </div>
+          <div class='row'>
+            <div class='column'>          
+              <div class="silhouette">
+                <h2>シルエット</h2>
+                <p>ボリューミーな服は苦手。アウターのサイズ感は
+                  <br>ジャストサイズがちょうどいい。
+                </p>
+              </div>
+            </div>
+            <div class='column'>              
+              <div class="material pc">
+                <h2>素材</h2>
+                <p>生地に厚みがあり、
+                  <br>ハリ感のあるものがおすすめ。
+                </p>
+              </div>
+              <div class="material sp">
+                <h2>素材</h2>
+                <p>生地に厚みがあり、ハリ感のあるものがおすすめ。
+                </p>
+              </div>              
+            </div>
+          </div>              
+        </div>
+
+        <div class="styling">
+          <div class="styling-img text-center">
+            <a href="https://lavanda.jp/collections/straight_styling1">
+              <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/straight-styling-1.jpg?v=1609296744" alt="">
+            </a>
+          </div>
+          <div class="styling-text text-center">
+            <h2>styling point</h2>
+            <p>オープンカラーの首元は、
+              <br>ストレートタイプにピッタリ。
+              <br>ボリューミーに見えがちな胸元を
+              <br>スッキリした印象にしてくれます。
+              <br>1枚で着ても様になります。
+            </p>
+            <h3>|</h3>
+            <div class="item-name">
+              <a href="https://lavanda.jp/products/lv20awac21"><p>ベロアワイドカチューシャ &yen;1,500 +tax</p></a>
+              <a href="https://lavanda.jp/products/lv20awop02"><p>ミリタリーオールインワン &yen;12,000 +tax</p></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="styling">
+          <div class="styling-img text-center sp">
+            <a href="https://lavanda.jp/collections/straight_styling2">
+              <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/straight-styling-2.jpg?v=1609296749" alt="">
+            </a>
+          </div>           
+          <div class="styling-text text-center margin_left">
+            <h2>styling point</h2>
+            <p>Vネックのニットをインナーにして
+              <br>胸元をスッキリした印象に。
+              <br>テーラードジャケットは、二の腕のハリや
+              <br>目立ちやすいバストが気になる
+              <br>ストレートタイプの救世主的なアイテムです。
+              <br>服の余計な膨らみをコンパクトに抑えてくれ、
+              <br>すっきりとした体型に見せてくれます。
+            </p>
+            <h3>|</h3>
+            <div class="item-name">
+              <a href="https://lavanda.jp/products/la20awac16"><p>ウール調バケットハット &yen;5,500 +tax</p></a>
+              <a href="https://lavanda.jp/products/lv20awjk02"><p>テーラードジャケット &yen;13,000 +tax</p></a>
+              <a href="https://lavanda.jp/products/lv20awpt01"><p>スラックスベルトパンツ &yen;9,800 +tax</p></a>
+              <a href="https://lavanda.jp/products/lv20awkt07"><p>Vネックレースニット &yen;9,800 +tax</p></a>
+            </div>
+          </div>
+          <div class="styling-img text-center pc">
+            <a href="https://lavanda.jp/collections/straight_styling2">
+              <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/straight-styling-2.jpg?v=1609296749" alt="">
+            </a>
+          </div>          
+        </div>
+        
+        <div class="styling">
+          <div class="styling-img text-center">
+            <a href="https://lavanda.jp/collections/straight_styling3">
+              <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/straight-styling-3.jpg?v=1609296754" alt="">
+            </a>
+          </div>
+          <div class="styling-text text-center">
+            <h2>styling point</h2>
+            <p class="pc">ロングダッフルコート×
+              <br>サテンキャミワンピースでIラインの
+              <br>縦長シルエットを意識する事で
+              <br>スタイルがよくみえます。
+              <br>直線的なラインをつくりやすい
+              <br>ロングコートはストレートタイプに
+              <br>オススメです。
+            </p>
+            <p class="sp">ロングダッフルコート×サテンキャミワンピースで
+              <br>Iラインの縦長シルエットを意識する事で
+              <br>スタイルがよくみえます。
+              <br>直線的なラインをつくりやすいロングコートは
+              <br>ストレートタイプにオススメです
+            </p>            
+            <h3>|</h3>
+            <div class="item-name">
+              <a href="https://lavanda.jp/products/lv20awkt08"><p>リブタートルニット &yen;7,000 +tax</p></a>
+              <a href="https://lavanda.jp/products/lv20awop06"><p>サテンキャミワンピース &yen;10,800 +tax</p></a>
+              <a href="https://lavanda.jp/products/lv20awct02"><p>ロングダッフルコート &yen;22,000 +tax</p></a>
+            </div>
+          </div>
+        </div>        
+      </div>
+      
+		<!--    骨格ウェーブ      -->   
+      <div class="wave">
+        <div class="title text-center">
+          <a id="wave"><img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/wave-title.jpg?v=1608841419" alt=""></a>
+        </div>
+        <div class="fashion-point text-center">
+          <div class='row'>
+            <div class='column'>
+              <div class="neck pc">
+                <h2>首元</h2>
+                <p>ラウンドネック、
+                  <br>ボトルネックなどの首元が
+                  <br>あまり開いていないものが似合う。
+                </p>
+              </div>
+              <div class="neck sp">
+                <h2>首元</h2>
+                <p>ラウンドネック、ボトルネックなどの首元が
+                  <br>あまり開いていないものが似合う。
+                </p>
+              </div>
+            </div>
+            <div class='column'>
+              <div class="cordinate pc">
+                <h2>コーディネート</h2>
+                <p>腰の位置が低めの下重心なので
+                  <br>ウエスト位置が重要。胴長に見えやすいため
+                  <br>ハイウエストがスタイルアップのコツ。
+                </p>
+              </div>
+              <div class="cordinate sp">
+                <h2>コーディネート</h2>
+                <p>腰の位置が低めの下重心なのでウエスト位置が重要。
+                  <br>胴長に見えやすいためハイウエストがスタイルアップのコツ。
+                </p>
+              </div>              
+            </div>
+          </div>
+          <div class='row'>
+            <div class='column'>          
+              <div class="silhouette">
+                <h2>シルエット</h2>
+                <p>身体にフィットするタイトなシルエット、
+                  <br>またはふんわりエアリーなシルエットが似合う。
+                </p>
+              </div>
+            </div>
+            <div class='column'>              
+              <div class="material pc">
+                <h2>素材</h2>
+                <p>レース、シフォン、チュール、とろみのある素材、
+                  <br>透ける素材、柔らかい素材がおすすめ。
+                </p>
+              </div>
+              <div class="material sp">
+                <h2>素材</h2>
+                <p>レース、シフォン、チュール、とろみのある素材、
+                  <br>透ける素材、柔らかい素材がおすすめ。
+                </p>
+              </div>              
+            </div>
+          </div>              
+        </div>
+
+        <div class="styling">
+          <div class="styling-img text-center">
+            <a href="https://lavanda.jp/collections/wave_styling1">
+              <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/wave-styling-1.jpg?v=1609296763" alt="">
+            </a>
+          </div>
+          <div class="styling-text text-center">
+            <h2>styling point</h2>
+            <p>ベルト位置が高めのワンピースは、
+              <br>バランスが上がり足も長く見えるので
+              <br>ウエストの長さが気になる
+              <br>ウェーブタイプにとっては、簡単に
+              <br>スタイルアップできるのでオススメです。
+            </p>
+            <h3>|</h3>
+            <div class="item-name">
+              <a href="https://lavanda.jp/products/lv20awct02"><p>ロングダッフルコート &yen;22,000 +tax</p></a>
+              <a href="https://lavanda.jp/products/lv20awkt04"><p>シアースリーブリブニット &yen;6,800 +tax</p></a>
+              <a href="https://lavanda.jp/products/lv20awop04"><p>サイドプリーツワンピース &yen;13,000 +tax</p></a>
+              <a href="https://lavanda.jp/products/la20awsh01"><p>レースアップショートブーツ &yen;15,000 +tax</p></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="styling">
+          <div class="styling-img text-center sp">
+            <a href="https://lavanda.jp/collections/wave_styling2">
+              <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/wave-styling-2.jpg?v=1609296769" alt="">
+            </a>
+          </div>           
+          <div class="styling-text text-center margin_left">
+            <h2>styling point</h2>
+            <p>チュールスカートは、柔らかく薄い素材が
+              <br>腰回りをふんわりとカバーしてくれるので、
+              <br>スタイルアップを叶えてくれます。
+              <br>アルファベットの「X」ラインを
+              <br>意識する事でスタイルがよくみえます。
+            </p>
+            <h3>|</h3>
+            <div class="item-name">
+              <a href="https://lavanda.jp/products/lv20awpk03"><p>レディースフォトパーカー &yen;7,800 +tax</p></a>
+              <a href="https://lavanda.jp/products/lv20awsk03"><p>チュールレイヤードスカート &yen;10,800 +tax</p></a>
+            </div>
+          </div>
+          <div class="styling-img text-center pc">
+            <a href="https://lavanda.jp/collections/wave_styling2">
+              <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/wave-styling-2.jpg?v=1609296769" alt="">
+            </a>
+          </div>          
+        </div>
+        
+        <div class="styling">
+          <div class="styling-img text-center">
+            <a href="https://lavanda.jp/collections/wave_styling3">
+              <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/wave-styling-3.jpg?v=1609296779" alt="">
+            </a>
+          </div>
+          <div class="styling-text text-center">
+            <h2>styling point</h2>
+            <p>少し寂しい印象になってしまう
+              <br>上半身を、コートのボリュームで
+              <br>カバーするとスタイルアップが叶います。
+              <br>ボリュームのあるコートには
+              <br>タイトなボトム合わせが◎。
+            </p>
+            <h3>|</h3>
+            <div class="item-name">
+              <a href="https://lavanda.jp/products/lv20awct01"><p>ボアガウンコート &yen;18,000 +tax</p></a>
+              <a href="https://lavanda.jp/products/lv20awkt08"><p>リブタートルニット &yen;7,000 +tax</p></a>
+              <a href="https://lavanda.jp/products/skinny-denim-pants"><p>スキニーデニムパンツ &yen;12,800 +tax</p></a>
+            </div>
+          </div>
+        </div>        
+      </div>
+      
+		<!--    骨格ナチュラル      -->
+      <div class="natural">
+        <div class="title text-center">
+          <a id="natural"><img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/natural-title.jpg?v=1608841425" alt=""></a>
+        </div>
+        <div class="fashion-point text-center">
+          <div class='row'>
+            <div class='column'>
+              <div class="neck pc">
+                <h2>首元</h2>
+                <p>タートルネック、
+                  <br>ラウンドネックなどが似合う。
+                </p>
+              </div>
+              <div class="neck sp">
+                <h2>首元</h2>
+                <p>タートルネック、ラウンドネックなどが似合う。
+                </p>
+              </div>
+            </div>
+            <div class='column'>
+              <div class="cordinate pc">
+                <h2>コーディネート</h2>
+                <p>肩幅が広めで骨格がしっかりしているため、
+                  <br>こなれたムードに持っていける
+                  <br>ゆったりビッグシルエットがおすすめ。
+                </p>
+              </div>
+              <div class="cordinate sp">
+                <h2>コーディネート</h2>
+                <p>肩幅が広めで骨格がしっかりしているため、
+                  <br>こなれたムードに持っていける
+                  <br>ゆったりビッグシルエットがおすすめ。
+                </p>
+              </div>              
+            </div>
+          </div>
+          <div class='row'>
+            <div class='column'>          
+              <div class="silhouette">
+                <h2>シルエット</h2>
+                <p>ロングスカートやマキシ丈、
+                  <br>落ち感のあるシルエットでお洒落さんに
+                </p>
+              </div>
+            </div>
+            <div class='column'>              
+              <div class="material pc">
+                <h2>素材</h2>
+                <p>厚手でざっくりとした素材を
+                  <br>選ぶとよりいい感じ。
+                </p>
+              </div>
+              <div class="material sp">
+                <h2>素材</h2>
+                <p>厚手でざっくりとした素材を選ぶとよりいい感じ。
+                </p>
+              </div>              
+            </div>
+          </div>              
+        </div>
+
+        <div class="styling">
+          <div class="styling-img text-center">
+            <a href="https://lavanda.jp/collections/natural_styling1">
+              <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/natural-styling-1.jpg?v=1609296788" alt="">
+            </a>
+          </div>
+          <div class="styling-text text-center">
+            <h2>styling point</h2>
+            <p>ナチュラルタイプは、
+              <br>身体のラインはあまり見せない方が
+              <br>素敵に見えるのでストンとしたラインで
+              <br>ゆったりしたワンピースが似合います。
+              <br>ウエストのベルトはしないで着るのが
+              <br>スタイルアップのポイントです。
+            </p>
+            <h3>|</h3>
+            <div class="item-name">
+              <a href="https://lavanda.jp/products/lv20awct02"><p>ロングダッフルコート &yen;22,000 +tax</p></a>
+              <a href="https://lavanda.jp/products/lv20awkt06"><p>ベルト付きニットOP &yen;14,000 +tax</p></a>              
+            </div>
+          </div>
+        </div>
+        
+        <div class="styling">
+          <div class="styling-img text-center sp">
+            <a href="https://lavanda.jp/collections/natural_styling2">
+              <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/natural-styling-2.jpg?v=1609296795" alt="">
+            </a>
+          </div>           
+          <div class="styling-text text-center margin_left">
+            <h2>styling point</h2>
+            <p>しっかりした骨格のナチュラルタイプは
+              <br>ラフさと抜け感のある
+              <br>ビッグシルエットのニットが得意。
+              <br>ニットにフレアなワンピースを
+              <br>レイヤードするコーディネートなら、
+              <br>骨感をカバーすることが可能です。
+            </p>
+            <h3>|</h3>
+            <div class="item-name">
+              <a href="https://lavanda.jp/products/lv20awkt03"><p>ジップフードニット &yen;8,500 +tax</p></a>
+              <a href="https://lavanda.jp/products/lv20awop05"><p>フラワーブラウスワンピース &yen;13,000 +tax</p></a>
+            </div>
+          </div>
+          <div class="styling-img text-center pc">
+            <a href="https://lavanda.jp/collections/natural_styling2">
+              <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/natural-styling-2.jpg?v=1609296795" alt="">
+            </a>
+          </div>          
+        </div>
+        
+        <div class="styling">
+          <div class="styling-img text-center">
+            <a href="https://lavanda.jp/collections/natural_styling3">
+              <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/natural-styling-3.jpg?v=1609296800" alt="">
+            </a>
+          </div>
+          <div class="styling-text text-center">
+            <h2>styling point</h2>
+            <p class="pc">カジュアルテイストを得意とする
+              <br>ナチュラルタイプは、
+              <br>ラフなスウェットも
+              <br>おしゃれに着こなせます。
+              <br>体のフレームを活かしつつ、
+              <br>しっかりした骨格を目立たせないように
+              <br>するためにはゆったりとした
+              <br>シルエット作りがポイントです。
+            </p>
+            <p class="sp">カジュアルテイストを得意とする
+              <br>ナチュラルタイプは、
+              <br>ラフなスウェットもおしゃれに着こなせます。
+              <br>体のフレームを活かしつつ、
+              <br>しっかりした骨格を目立たせないように
+              <br>するためにはゆったりとした
+              <br>シルエット作りがポイントです。
+            </p>            
+            <h3>|</h3>
+            <div class="item-name">
+              <a href="https://lavanda.jp/products/lv20awnsw01"><p>フロッキースウェット &yen;7,000 +tax</p></a>
+              <a href="https://lavanda.jp/products/lv20awpt02"><p>チェックワイドパンツ &yen;10,800 +tax</p></a>
+              <a href="https://lavanda.jp/products/lv20awng01"><p>LAVANDA LOGOボアバッグ &yen;7,800 +tax</p></a>
+            </div>
+          </div>
+        </div>        
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,87 @@
+<div class="page-tpl">
+  <div class="container fix">
+    <div class="br-fix">
+    	{% include 'breadcrumb' %}
+    </div>
+
+    <header class="page-header">
+      <h2>
+        {% include 'multilang' with page.title %}
+      </h2>      
+    </header>
+    <div class="colection-look clearfix">
+      <div class="look-block08 clearfix">
+        <div class="look-image-img10">
+          <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/1.jpg?v=1593587472">
+          <div class="look_image-credit"><p>WIDE DENIM PANTS　¥12,800+tax</p><p>SHINY SANDAL　¥13,000+tax</p><p>BICOLOR RING PIERCE　¥2,800+tax</p></div>
+        </div>
+      </div>      
+      <div class="look-block09 clearfix">
+        <div class="look-image-img11">
+          <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/2_d36ef8e2-260b-44e8-868d-daf23567cd93.jpg?v=1593587472">
+        </div>        
+        <div class="look-image-img12">
+          <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/3.jpg?v=1593587472">
+          <div class="look_image-credit"><p>BE MINE T-SHIRTS　¥5,500+tax</p><p>SKINNY DENIM PANTS　¥12,800+tax</p></div>
+        </div>
+      </div>      
+      <div class="look-block06 clearfix">
+        <div class="look-image-img07">
+          <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/4-1.jpg?v=1593587473">
+          <div class="look_image-credit"><p>WIDE DENIM PANTS　¥12,800+tax</p></div>
+        </div>
+        <div class="look-image-img08"><img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/4-2.jpg?v=1593587472"></div>
+      </div>      
+      <div class="look-block06 clearfix">
+        <div class="look-image-img07">
+          <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/5-1.jpg?v=1593587472">
+          <div class="look_image-credit"><p>BE MINE T-SHIRTS　¥5,500+tax</p></div>
+        </div>
+        <div class="look-image-img08"><img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/5-2.jpg?v=1593587472"></div>
+      </div>      
+      <div class="look-block08 clearfix">
+        <div class="look-image-img10">
+          <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/6.jpg?v=1593587472">
+          <div class="look_image-credit"><p>BE MINE T-SHIRTS　¥5,500+tax</p></div>
+        </div>
+      </div>      
+      <div class="look-block08 clearfix">
+        <div class="look-image-img10">
+          <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/9.jpg?v=1593587472">
+        </div>
+      </div>      
+      <div class="look-block10 clearfix">
+        <div class="look-image-img13">
+          <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/10_1.jpg?v=1593587472">
+        </div>
+        <div class="look-image-img18">
+          <div class="look_image-credit"><p>MUTE DEVOTION T-SHIRTS　¥5,500+tax</p></div>
+        </div>
+      </div>      
+      <div class="look-block08 clearfix">
+        <div class="look-image-img10">
+          <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/11.jpg?v=1593587472">
+          <div class="look_image-credit"><p>MUTE DEVOTION T-SHIRTS　¥5,500+tax</p></div>
+        </div>
+      </div>      
+
+    </div>
+
+    {% comment %}
+    Regular page content goes here.
+    {% endcomment %}
+
+    {% if settings.enable_multilang and page.content contains '[lang2]' %}
+    <div class="rte lang1">
+      {{ page.content | split: '[lang2]' | first }}
+    </div>
+    <div class="rte lang2">
+      {{ page.content | split: '[lang2]' | last }}
+    </div>
+    {% else %}
+    <div class="rte">
+      {{ page.content | split: '[lang2]' | first }}
+    </div>
+    {% endif %}
+  </div>
+</div>

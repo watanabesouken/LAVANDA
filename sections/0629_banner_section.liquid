@@ -1,0 +1,88 @@
+<div class="container">
+  <div class="row" >
+    <div class="banner_0629" >
+      <a href="{{ section.settings.banner_url_0629}}">
+        <img src="{{ section.settings.banner_img_0629 | img_url: '2000x' }}">
+      </a>
+    </div>
+    <div class="banner_0629">
+      <a href="{{ section.settings.banner_url2_0629}}">
+      <img src="{{ section.settings.banner_img2_0629 | img_url: '2000x' }}">
+      </a>
+    </div>
+  </div>
+   <div class="row">
+    <div class="banner_0629">
+      <a href="{{ section.settings.banner_url3_0629}}">
+      <img src="{{ section.settings.banner_img3_0629 | img_url: '2000x' }}">
+      </a>
+    </div>
+    <div class="banner_0629">
+      <a href="{{ section.settings.banner_url4_0629}}">
+      <img src="{{ section.settings.banner_img4_0629 | img_url: '2000x' }}">
+      </a>
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+{ 
+"settings": [
+    {
+      "type": "url",
+      "id": "banner_url_0629",
+      "label": "バナーのURL"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_img_0629",
+      "label": "バナー画像"
+    },
+    {
+      "type": "url",
+      "id": "banner_url2_0629",
+      "label": "バナーのURL"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_img2_0629",
+      "label": "バナー画像"
+    },
+    {
+      "type": "url",
+      "id": "banner_url3_0629",
+      "label": "バナーのURL"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_img3_0629",
+      "label": "バナー画像"
+    },
+    {
+      "type": "url",
+      "id": "banner_url4_0629",
+      "label": "バナーのURL"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_img4_0629",
+      "label": "バナー画像"
+    }
+  ],
+  "presets": [
+    {
+      "name": {
+        "ja": "0629バナーセクション"
+      },
+      "category": {
+        "ja": "banner"
+      }
+    }
+  ]
+
+}
+
+{% endschema %}
+
+

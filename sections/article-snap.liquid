@@ -1,0 +1,297 @@
+<div class="article-style-template container" data-section-id="{{ article.id }}" data-section-type="article-style-template">
+  <div class="article-header">
+    <h1 class="section-header__title">
+        {{ article.title }}
+    </h1>
+{% comment %}
+    <div class="article-date">
+      {{ article.published_at | time_tag: "%Y.%m.%d", format: 'month_day_year' }}
+    </div>
+ {% endcomment %}
+  </div>
+  <div class="return-blog">
+    <div class="page-width">
+      <a href="{{ blog.url }}">
+        ＜
+        <span>All {{ blog.title }}</span>
+      </a>
+    </div>
+  </div>
+  <div class="page-width remove-padding-mobile">
+    <div class="article-content">
+
+      <div class="article-left">
+        {% if article.metafields.article_image.image and article.metafields.article_image.image != blank %}
+          
+          {% assign images = article.metafields.article_image.image | strip_html | split: "===" %}
+
+          {% capture article_image %}
+            {% for image in images %}
+              <a href="#image-{{ forloop.index0 }}"><img src="{{ image }}"></a>
+            {% endfor %}
+          {% endcapture %}
+
+          <div id="ArticleMain-{{ article.id }}" class="article-slider">
+            {{ article_image }}
+          </div>
+        {% comment %}
+          <div id="ArticleThumb-{{ article.id }}" class="article-thumb-image">
+            {% for image in images %}
+              <div class="thumb-image{% if forloop.first %} active{% endif %}" data-index="{{ forloop.index0 }}">
+                <img src="{{ image }}">
+              </div>
+            {% endfor %}
+          </div>
+         {% endcomment %}
+        
+          <div class="extention-style">
+            <div class="extention-scroll">
+              <div class="extention-close"></div>
+              <div class="extention-contents">
+                <div class="extention-contents-main">
+                  {% for image in images %}
+                    <div class="extention-contents-main-box" id="image-{{ forloop.index0 }}">
+                      <img src="{{ image }}">
+                    </div>
+                  {% endfor %}
+                </div>
+                <div class="extention_contents-navi">
+                  {{ article_image }}
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        {% endif %}
+      </div>
+      <div class="article-right">
+        {% if article.content != blank %}
+          <div class="article-description small--hide">
+            {{ article.content }}
+          </div>
+        {% endif %}
+
+        {% assign product_size_check = false %}
+        {% if article.metafields.product.size and article.metafields.product.size != blank %}
+          {% assign product_size_check = true %}
+          {% assign product_size = article.metafields.product.size %}
+        {% endif %}
+
+        {% if article.metafields.product.handle and article.metafields.product.handle != blank %}
+          {% assign product_size = article.metafields.product.size %}
+
+          <div class="article-product-title">
+            {{ 'blogs.article.item' | t }}
+          </div>                
+          <div class="grid grid--uniform article-product">
+            {% assign product_list = article.metafields.product.handle | strip_html | split: "===" %}            
+            {% for product_handle in product_list %}
+              {% assign product_index = forloop.index %}
+              {% assign product = all_products[product_handle] %}
+              {% assign grid_item_width = 'medium-up--one-half small--one-half' %}
+              {% if product_size_check %}
+                {%- render 'product-grid-item_snap', product: product, grid_item_width: grid_item_width, product_size: product_size, product_index: product_index -%}
+              {% else %}
+                {%- render 'product-grid-item_snap', product: product, grid_item_width: grid_item_width -%}
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  {% if section.settings.enable_other %}
+     {% assign post_limit = section.settings.other_limit %}
+    {% assign current_article = article.handle %}
+    {% assign article_index = 0 %}
+    {% assign article_of_page = 4 %}
+
+    <div class="other-article-container">
+      {% if section.settings.other_heading != blank %}
+        <h3>{{ section.settings.other_heading }}</h3>
+      {% endif %}
+      
+      
+      <div class="other-article-slide">
+        {% assign current_tags = article.tags %}
+        {% paginate blog.articles by 1000 %}
+        
+        {% for other_article in blog.articles %}
+  		{% if other_article.tags == current_tags %}
+          {% if current_article != other_article.handle %}
+            {% if post_limit > article_index %}
+              {% assign article_index = article_index | plus: 1 %}
+              {% assign check_position = article_index | modulo: article_of_page %}
+
+              {% if forloop.first or check_position == 1 %}
+                <div class="other-article-block">
+                  <div class="grid">
+              {% endif %}
+
+              {%- render 'article-grid-item_snap', blog: blog, article: other_article, grid_item_width: 'medium-up--one-quarter small--one-half', per_row: '4', image_size: 'portrait', section: section, current_tags: article.tags -%}
+
+              {% if forloop.last or check_position == 0 %}
+                  </div>
+                </div>
+              {% endif %}
+            {% else %}
+              {% break %}
+            {% endif %}
+          {% else %}
+            {% if forloop.last and check_position != 1 %}
+                
+              
+            {% endif %}
+          {% endif %}
+        {% endif %}
+        
+        {% endfor %}
+        
+          {% endpaginate %}
+        </div>
+   
+<!--        <div class="top-more">
+        <a href="">
+          MORE
+         </a>
+      </div> -->
+    </div>
+  {% endif %}
+</div>
+
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<script type="text/javascript">
+      var slideshow = $('#ArticleMain-' + {{ article.id }});
+      var slideThumbWrap = $('#ArticleThumb-' + {{ article.id }});
+      var slideThumb = $('#ArticleThumb-' + {{ article.id }} + ' .thumb-image');
+      
+      slideshow.slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        dots: false,
+        prevArrow: '<button data-id="prevArrowTemplate" class="slick-prev slick-arrow" aria-label="Previous" type="button" style=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 22"><path fill="#ccc" d="M11 11.7l-.7-.7L.7 1.3 0 2l9.7 9.7L0 21.3l.7.7 9.6-9.7.7-.6z"/><path fill="#000013" d="M11 10.3l-.7-.6L.7 0 0 .7l9.7 9.6L0 20l.7.7 9.6-9.7.7-.7z"/></svg></button>',
+        nextArrow: '<button data-id="nextArrowTemplate" class="slick-next slick-arrow" aria-label="Next" type="button" style=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 22"><path fill="#ccc" d="M11 11.7l-.7-.7L.7 1.3 0 2l9.7 9.7L0 21.3l.7.7 9.6-9.7.7-.6z"/><path fill="#000013" d="M11 10.3l-.7-.6L.7 0 0 .7l9.7 9.6L0 20l.7.7 9.6-9.7.7-.7z"/></svg></button>',
+        infinite : true
+      });
+
+      slideshow.on('beforeChange', function(event, slick, currentSlide, nextSlide) {   
+        slideThumb.removeClass('active');
+        slideThumbWrap.find('.thumb-image[data-index="'+nextSlide+'"]').addClass('active');
+      });
+
+      slideThumb.on('click', function() {
+        if (!$(this).hasClass('active')) {
+          var slideIndex = $(this).data('index');
+          slideshow.slick('slickGoTo', slideIndex);
+        }
+      });
+
+      $('.article-slider a').on('click', function() {
+        $('html, body').addClass('no-scroll');
+        $('.extention-style').addClass('active');
+      });
+
+      $('.extention-close').on('click', function() {
+        $('html, body').removeClass('no-scroll');
+        $('.extention-style').removeClass('active');
+      });
+
+      $('.other-article-slide').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        dots: false,
+        prevArrow: '<button data-id="prevArrowTemplate" class="slick-prev slick-arrow" aria-label="Previous" type="button"><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-chevron-left" viewBox="0 0 284.49 498.98"><path d="M249.49 0a35 35 0 0 1 24.75 59.75L84.49 249.49l189.75 189.74a35.002 35.002 0 1 1-49.5 49.5L10.25 274.24a35 35 0 0 1 0-49.5L224.74 10.25A34.89 34.89 0 0 1 249.49 0z"></path></svg></button>',
+        nextArrow: '<button data-id="nextArrowTemplate" class="slick-next slick-arrow " aria-label="Next" type="button"><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-chevron-right" viewBox="0 0 284.49 498.98"><path d="M35 498.98a35 35 0 0 1-24.75-59.75l189.74-189.74L10.25 59.75a35.002 35.002 0 0 1 49.5-49.5l214.49 214.49a35 35 0 0 1 0 49.5L59.75 488.73A34.89 34.89 0 0 1 35 498.98z"></path></svg></button>',
+        infinite : true
+      });
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "articleBody": {{ article.content | strip_html | json }},
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": {{ shop.url | append: article.url | json }}
+  },
+  "headline": {{ article.title | json }},
+  {% if article.excerpt != blank %}
+    "description": {{ article.excerpt | strip_html | json }},
+  {% endif %}
+  {% if article.image %}
+    {% assign image_size = article.image.width | append: 'x' %}
+    "image": [
+      {{ article | img_url: image_size | prepend: "https:" | json }}
+    ],
+  {% endif %}
+  "datePublished": {{ article.published_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
+  "dateModified": {{ article.updated_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
+  "dateCreated": {{ article.created_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
+  "author": {
+    "@type": "Person",
+    "name": {{ article.author | json }}
+  },
+  "publisher": {
+    "@type": "Organization",
+    {% if settings.share_image %}
+      {% assign image_size = settings.share_image.width | append: 'x' %}
+      "logo": {
+        "@type": "ImageObject",
+        "height": {{ settings.share_image.height | json }},
+        "url": {{ settings.share_image | img_url: image_size | prepend: "https:" | json }},
+        "width": {{ settings.share_image.width | json }}
+      },
+    {% endif %}
+    "name": {{ shop.name | json }}
+  }
+}
+</script>
+
+{% schema %}
+  {
+    "name": "Article pages",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "social_sharing_blog",
+        "label": "Show social sharing buttons",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Other style"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_other",
+        "label": "Enable",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "other_heading",
+        "label": "Heading",
+        "default": "OTHER STYLE"
+      },
+      {
+        "type": "range",
+        "id": "other_limit",
+        "label": "Posts",
+        "default": 8,
+        "min": 4,
+        "max": 12,
+        "step": 4
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_show_date",
+        "label": "Show date",
+        "default": true
+      }
+    ]
+  }
+{% endschema %}

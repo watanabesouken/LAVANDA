@@ -1,0 +1,16 @@
+<div class="digital-exhibition" id="digi-ex">
+  <div class="content">
+    <p class="close" id="digi-close">✕</p>
+    <a href="https://btq-jp.com/lavanda/" target="_blank" rel="noopener noreferrer">
+      <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/digital_popup.png?v=1614859807" alt="">
+    </a>
+  </div>
+</div>
+
+<script>
+  var element = document.getElementById( "digi-close" );
+  element.onclick = function() {
+    var target = document.getElementById( "digi-ex" );
+    target.classList.toggle('digi-none');
+  }
+</script>

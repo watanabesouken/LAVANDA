@@ -1,0 +1,119 @@
+{% comment %}
+商品ページで関連SNAP表示
+{% endcomment %}
+
+{%- unless product.tags contains "ACCESSORIES" or product.tags contains "GOODS" or product.tags contains "SHOES" -%}
+
+
+{% assign product_handle = product.handle %}
+
+
+{% assign loop_number = 0 %}
+{%- assign blog = blogs['snap-2021win'] -%}
+{% capture snap_head %}
+<div class="container">
+  <div class="halo-blog-content"> 
+    <div class="row">
+      <div id="shopify-section-blog-template" class="shopify-section col-12 col-xl-9 col-main">
+        <div class="widget-title not-before">   
+          <h3 class="box-title">
+            <span class="title"> 
+              <span>
+                RECOMMEND SNAP
+              </span>
+            </span>
+          </h3>    
+        </div>
+        <div class="content-blog blog-default">
+          <ul class="list-blog snap-item">
+{% endcapture %}
+            {%- paginate blog.articles by 9999 -%}                        
+            {%- for article in blog.articles -%}
+            	{%- assign product_list = article.metafields.product.handle | strip_html | split: "===" -%}
+                {%- for handle in product_list -%}
+                  {%- if handle == product_handle -%}           
+                {%- if loop_number == 0 -%}
+                    {{snap_head}}
+                {%- endif -%}
+                    {%- include "snap-item" -%}
+                    {%- assign loop_number = loop_number | plus:1 -%}
+                  {%- endif -%}
+                {%- endfor -%}
+            {%- endfor -%}
+            {%- endpaginate -%}
+            
+            {%- paginate blogs['snap-2021au'].articles by 9999 -%}                        
+            {%- for article in blogs['snap-2021au'].articles -%}
+            	{%- assign product_list = article.metafields.product.handle | strip_html | split: "===" -%}
+                {%- for handle in product_list -%}
+                  {%- if handle == product_handle -%}           
+                {%- if loop_number == 0 -%}
+                    {{snap_head}}
+                {%- endif -%}
+                    {%- include "snap-item" -%}
+                    {%- assign loop_number = loop_number | plus:1 -%}
+                  {%- endif -%}
+                {%- endfor -%}
+            {%- endfor -%}
+            {%- endpaginate -%}
+            
+            {%- paginate blogs['snap-2021au-win'].articles by 9999 -%}                        
+            {%- for article in blogs['snap-2021au-win'].articles -%}
+            	{%- assign product_list = article.metafields.product.handle | strip_html | split: "===" -%}
+                {%- for handle in product_list -%}
+                  {%- if handle == product_handle -%}           
+                {%- if loop_number == 0 -%}
+                    {{snap_head}}
+                {%- endif -%}
+                    {%- include "snap-item" -%}
+                    {%- assign loop_number = loop_number | plus:1 -%}
+                  {%- endif -%}
+                {%- endfor -%}
+            {%- endfor -%}
+            {%- endpaginate -%}
+            
+            {%- paginate blogs['snap-2021ss'].articles by 9999 -%}                        
+            {%- for article in blogs['snap-2021ss'].articles -%}
+            	{%- assign product_list = article.metafields.product.handle | strip_html | split: "===" -%}
+                {%- for handle in product_list -%}
+                  {%- if handle == product_handle -%}           
+                {%- if loop_number == 0 -%}
+                    {{snap_head}}
+                {%- endif -%}
+                    {%- include "snap-item" -%}
+                    {%- assign loop_number = loop_number | plus:1 -%}
+                  {%- endif -%}
+                {%- endfor -%}
+            {%- endfor -%}
+            {%- endpaginate -%}
+            
+            {%- paginate blogs['snap-2022spring'].articles by 9999 -%}                        
+            {%- for article in blogs['snap-2022spring'].articles -%}
+            	{%- assign product_list = article.metafields.product.handle | strip_html | split: "===" -%}
+                {%- for handle in product_list -%}
+                  {%- if handle == product_handle -%}           
+                	{%- if loop_number == 0 -%}
+                    	{{snap_head}}
+                	{%- endif -%}
+                    	{%- include "snap-item" -%}
+                    	{%- assign loop_number = loop_number | plus:1 -%}
+                  	{%- endif -%}
+                {%- endfor -%}
+            {%- endfor -%}
+            {%- endpaginate -%}
+            
+            
+{%- if loop_number > 0 -%}
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+{%- endif -%}
+
+
+          
+
+{%- endunless -%}

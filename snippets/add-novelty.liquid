@@ -1,0 +1,289 @@
+
+{% comment %}
+============================
+ノベルティー追加機能のProgramFile
+
+
+■機能概要
+・〇円以上でノベルティー商品を自動でカートに追加
+・1回の注文につき付与数量は1個
+・複数のノベルティー付与にも対応可能
+（例：5,000円でA、10,000円以上でAとB）
+・「ノベルティー対象」タグを持っている商品の合計金額でノベルティー追加するか制御
+
+■在庫管理
+・ノベルティー商品は在庫管理し、在庫がなくなればカートに追加されない
+
+■アクセス制限
+・ノベルティー商品はコレクションページ・検索結果・最近見た商品・関連商品には非表示。
+・ノベルティー商品のURLを直接打って流入してきても、TOPページに強制リダイレクト
+・ノベルティー商品はカート画面からのリンクを非表示にして商品ページに遷移できない
+
+■準備すること
+・まずノベルティー商品を商品登録し、その商品のURLと追加基準金額を、このファイルのコードに登録
+
+
+============================
+{% endcomment %}
+
+
+
+<!-- 数量変更時に自動更新 -->
+<script>
+  $(document).ready(function(){
+    $("input[name='updates[]']").on('input', function() {      
+      $( "button[name='update']" ).trigger( "click" );
+    });
+  });
+</script>
+
+      
+
+{% comment %}
+========================================================
+❶ノベルティーの在庫とIDを取得
+
+■1つ目のノベルティ設定
+・novelty_1に、ノベルティーのURL名（handle）を入力してください。
+・novelty_1_priceに、追加基準金額を入力してください。
+
+
+■2つ目のノベルティ設定
+・novelty_2に、ノベルティーのURL名（handle）を入力してください。
+※2つ目のノベルティ設定をしない場合は、「novelty_2 = ''」と空欄状態にしてください。
+・novelty_2_priceに、追加基準金額を入力してください。
+
+========================================================
+{% endcomment %}
+
+
+{% assign novelty_1 = 'lv22awn2' %}
+{% assign novelty_1_price = 30000 %}
+{% assign novelty_1_cart_in = false %}
+
+{% assign novelty_2 = '' %}
+{% assign novelty_2_price =  %}
+{% assign novelty_2_cart_in = false %}
+
+
+{% if novelty_1 != '' %}
+  {% for variant in all_products[novelty_1].variants %}  
+    {% assign novelty_1_inventory = variant.inventory_quantity %}
+    {% assign novelty_1_id = variant.id %}
+  {% endfor %}
+{% endif %} 
+
+
+{% if novelty_2 != '' %}
+  {% for variant in all_products[novelty_2].variants %}
+    {% assign novelty_2_inventory = variant.inventory_quantity %}
+    {% assign novelty_2_id = variant.id %}
+  {% endfor %}
+{% endif %}
+
+
+{% comment %}
+========================================================
+❷カート内にノベルティーがあるかの判定
+　　　　　　　　　+
+　ノベルティー対象商品の合計金額を取得
+========================================================
+{% endcomment %}
+
+
+{% assign target_amount = 0 %}
+
+{% for item in cart.items %}   
+
+
+  {% if item.product.handle == novelty_1 %}
+      {% assign novelty_1_cart_in = true %}
+  {% elsif item.product.handle == novelty_2 %}
+      {% assign novelty_2_cart_in = true %}
+  {% endif %}
+
+  {% if item.product.tags contains 'ノベルティー対象' %}
+	{% assign target_amount = target_amount | plus: item.final_line_price  %}
+　{% endif %}
+
+{% endfor %}
+
+
+{% assign total_price = target_amount | divided_by:100 %}
+
+
+{% comment %}
+========================================================
+❸1つ目のノベルティの制御
+========================================================
+{% endcomment %}
+
+
+
+
+{% if novelty_1_inventory > 0 and novelty_1_cart_in == false and total_price >= novelty_1_price %}
+
+<script>
+jQuery(function($){
+    $(document).ready(function() {
+                          
+        var novelty01 = {
+        id: {{novelty_1_id}},
+        quantity: 1
+        };
+     
+        jQuery.ajax({
+          type: 'POST',
+          url: '/cart/add.js',             
+          data: novelty01,
+          dataType: 'json',
+        }).done(function(data, textStatus, jqXHR){          
+          location.href = '/cart';
+        }).fail(function(jqXHR, textStatus, errorThrown){
+          
+        });  
+          
+    
+    });
+});
+</script>
+
+{% elsif novelty_1_cart_in == true and total_price < novelty_1_price %}
+
+<script>
+jQuery(function($){
+    $(document).ready(function() {
+              
+        var novelty01 = {
+        id: {{novelty_1_id}},
+        quantity: 0
+        };
+            
+        jQuery.ajax({
+          type: 'POST',
+          url: '/cart/change.js',             
+          data: novelty01,
+          dataType: 'json',
+        }).done(function(data, textStatus, jqXHR){                    
+          location.href = '/cart';
+        }).fail(function(jqXHR, textStatus, errorThrown){          
+        });                  
+    
+    });
+});
+</script>
+
+{% endif %}
+
+
+{% comment %}
+========================================================
+❹2つ目のノベルティの制御
+========================================================
+{% endcomment %}
+
+{% if novelty_2_inventory > 0 and novelty_2_cart_in == false and total_price >= novelty_2_price %}
+
+<script>
+jQuery(function($){
+    $(document).ready(function() {
+              
+        var novelty02 = {
+        id: {{novelty_2_id}},
+        quantity: 1
+        };
+            
+        jQuery.ajax({
+          type: 'POST',
+          url: '/cart/add.js',             
+          data: novelty02,
+          dataType: 'json',
+        }).done(function(data, textStatus, jqXHR){              
+          location.href = '/cart';
+        }).fail(function(jqXHR, textStatus, errorThrown){          
+        });                  
+    
+    });
+});
+</script>
+
+{% elsif novelty_2_cart_in == true and total_price < novelty_2_price %}
+
+<script>
+jQuery(function($){
+    $(document).ready(function() {
+              
+        var novelty02 = {
+        id: {{novelty_2_id}},
+        quantity: 0
+        };
+            
+        jQuery.ajax({
+          type: 'POST',
+          url: '/cart/change.js',             
+          data: novelty02,
+          dataType: 'json',
+        }).done(function(data, textStatus, jqXHR){                    
+          location.href = '/cart';
+        }).fail(function(jqXHR, textStatus, errorThrown){          
+        });                  
+    
+    });
+});
+</script>
+
+
+{% endif %}
+
+
+{% comment %}
+========================================================
+❺アラート文の表示
+・ノベルティーが自動でカートに追加されたとき、カート画面にメッセージ表示
+・ノベルティーの在庫がないとき、カート画面にメッセージ表示
+========================================================
+{% endcomment %}
+
+
+
+
+
+{% if novelty_1 != '' %}
+<div class="alart-novelty">
+  
+  <ul>
+    
+  {% comment %}ノベルティーAの案内文{% endcomment %}
+  {% if novelty_1_cart_in == true %}
+    <li>・30,000円（税込）以上お買い上げの方に、Noveltyキャンドルをプレゼントしています</li>
+  {% elsif novelty_1_inventory <= 0 and novelty_1_cart_in == false and total_price >= 200 %}
+    <li>・Noveltyキャンドルは在庫がなくなったため、プレゼントを終了いたしました。</li>
+  {% endif %}
+    
+    
+  {% comment %}ノベルティーBの案内文{% endcomment %}  
+  {% if novelty_2_cart_in == true %}
+    <li>・〇円以上お買い上げの方に、ノベルティーBをプレゼントしています</li>
+  {% elsif novelty_2_inventory <= 0 and novelty_2_cart_in == false and total_price >= 400 %}
+    <li>・ノベルティーBは在庫がなくなったため、プレゼントを終了いたしました。</li>
+  {% endif %}
+  </ul>
+  
+</div>
+
+<style>
+  .alart-novelty{    
+  }
+  .alart-novelty ul li{
+    padding: 20px;
+    background: #EEE;
+    margin: 0;
+  }
+  .alart-novelty ul li:nth-child(n+2){
+    padding: 0 20px 20px 20px;
+    background: #EEE;
+  }
+</style>
+
+{% endif %}
+

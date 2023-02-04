@@ -1,0 +1,1213 @@
+<div class="page-tpl">
+  <div class="container">
+    {% include 'breadcrumb' %}
+
+    <header class="page-header">
+      <h2>
+        {% include 'multilang' with page.title %}
+      </h2>      
+    </header>
+
+    {% comment %}
+    Regular page content goes here.
+    {% endcomment %}
+
+    {% if settings.enable_multilang and page.content contains '[lang2]' %}
+    <div class="rte lang1">
+      {{ page.content | split: '[lang2]' | first }}
+    </div>
+    <div class="rte lang2">
+      {{ page.content | split: '[lang2]' | last }}
+    </div>
+    {% else %}
+    <div class="rte">
+      {{ page.content | split: '[lang2]' | first }}
+    </div>
+    {% endif %}
+  </div>
+</div>
+
+
+    <!DOCTYPE html>
+    <html lang="ja">
+    <head>
+      <meta charset="UTF-8">
+      <title>lavanda</title>
+      <meta name="description" content="lavanda">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
+      <link rel="manifest" href="/site.webmanifest">
+      <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+      <meta name="msapplication-TileColor" content="#da532c">
+      <meta name="theme-color" content="#ffffff">
+      <script src="js/jquery-3.6.0.min.js"></script>
+      <script src="js/script.js"></script>
+      <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Scheherazade+New&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap" rel="stylesheet">
+
+      <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+      
+    </head>
+
+    <body>
+
+    <div class="p-summer2022">
+      
+    <!--p-kv-->
+    <section class="p-kv">
+            <div class="p-kv-img">
+                <div class="p-main_img pcOnly" style="background-image: url(https://cdn.shopify.com/s/files/1/0322/8116/5869/files/top-min.png?v=1653838119)"></div>
+            </div>
+            <div class="p-kv-img">
+              <div class="p-main_img spOnly" style="background-image: url(https://cdn.shopify.com/s/files/1/0322/8116/5869/files/fv1_sp.png?v=1653846501)"></div>
+          </div>
+    </section>
+    <!--p-kv-->
+
+    <!--p-sec1-->
+    <section class="p-sec01">
+      <div class="p-sec01Inner">
+        <div class="p-sec01__img">
+          <div class="p-sec01__number">
+            <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/number1-pc-min.png?v=1653838119" alt="number1-pc">
+          </div>
+          <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/collection1-pc.jpg?v=1653838118" alt="collection1">
+          <table class="p-sec__price">
+            <tbody class="p-sec__items">
+              <tr class="p-sec__item">
+                <td class="p-sec__item--left">
+                  <a href="https://lavanda.jp/products/lv22scs8">ネックプリントスリットT</a>
+                </td>
+                <td class="p-sec__item--right">¥5,900(tax in)</td>
+             </tr>
+             <tr>
+                <td>
+                  <a href="https://lavanda.jp/products/lv22ss3">フレアエスカルゴスカート</a>
+                </td>
+                <td>¥11,900(tax in)</td>
+            </tr>
+          </tbody>
+         </table>
+        </div>
+      </div>
+    </section>
+    <!--p-sec1-->
+
+    <!--p-sec2-->
+    <div class="p-sec02">
+      <div class="p-sec02Inner">
+        <div class="p-sec02__first">
+          <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/collection2-left-pc.jpg?v=1653838118" alt="collection2-left">
+          <table class="pcOnly">
+            <tbody><tr>
+              <td>
+                <a href="https://lavanda.jp/products/lv22ssop3">マーメイドキャミジャンスカ</a>
+              </td>
+              <td>¥13,900(tax in)</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://lavanda.jp/products/lv22sac43">ツイストチェーンブレスレットSET</a>
+              </td>
+              <td>¥2,500(tax in)</td>
+            </tr>
+          </tbody>
+       </table>
+      </div>
+      <div class="p-sec02__second">
+        <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/collection2-center-pc.jpg?v=1653838118" alt="collection2-center">
+        <div class="p-sec02__third spOnly">
+          <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/number2-pc-min.png?v=1653838119" alt="number2">
+        </div>
+      </div>
+      <div class="p-sec02__third pcOnly">
+        <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/number2-pc-min.png?v=1653838119" alt="number2">
+      </div>
+      <div class="p-sec02__fourth">
+        <img class="pcOnly" src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/collection2-right-pc.jpg?v=1653838118" alt="collection2-right">
+        <img class="spOnly" src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/section02_buttom_sp.png?v=1653838119" alt="section02_buttom">
+        <table class="spOnly p-sec02__text">
+          <tbody><tr>
+            <td>
+              <a href="https://lavanda.jp/products/lv22ssop3">マーメイドキャミジャンスカ</a>
+            </td>
+            <td>¥13,900(tax in)</td>
+          </tr>
+          <tr>
+            <td>
+              <a href="https://lavanda.jp/products/lv22sac43">ツイストチェーンブレスレットSET</a>
+            </td>
+            <td>¥2,500(tax in)</td>
+          </tr>
+        </tbody>
+        </table>
+      </div>
+      </div>
+    </div>
+    <!--p-sec2-->
+
+    <!--p-sec3-->
+    <div class="p-sec03">
+      <div class="p-sec03Inner">
+        <div class="p-sec03__first">
+          <div class="p-sec03__number spOnly">
+            <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/number3-pc-min.png?v=1653838118" alt="number3">
+          </div>
+          <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/collection3-left-pc.jpg?v=1653838118" alt="collection3-left">
+        </div>
+        <div class="p-sec03__second pcOnly">
+          <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/collection3-center-pc.jpg?v=1653838118" alt="collection3-center">
+        </div>
+        <div class="p-sec03__third">
+          <img class="p-sec03__thirdImg" src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/collection3-right-pc.jpg?v=1653838118" alt="collection3-right">
+
+          <div class="p-sec03__second p-sec03__ttlImg spOnly">
+            <img class="p-sec03__lefttext" src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/03-text.png?v=1653838118" alt="03-text">
+            <img class="p-sec03__rightimg" src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/collection3-center-pc.jpg?v=1653838118" alt="collection3-center">
+          </div>
+          <table class="pcOnly">
+            <tbody><tr>
+              <td>
+                <a href="https://lavanda.jp/products/lv22scs11">ミッドサマーフォトT</a>
+              </td>
+              <td>¥6,500(tax in)</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://lavanda.jp/products/lv22sac36">ハートトップネックレス</a>
+              </td>
+              <td>¥2,900(tax in)</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://lavanda.jp/products/lv22sac42">マンテルチェーンブレスレット</a>
+              </td>
+              <td>¥2,500(tax in)</td>
+            </tr>
+          </tbody>
+         </table>
+        </div>
+        <div class="p-sec03__fourth pcOnly">
+          <div class="p-sec03__ttlImg pcOnly">
+            <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/03-text.png?v=1653838118" alt="03-text">
+          </div>
+          <div class="p-sec03__number pcOnly">
+            <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/number3-pc-min.png?v=1653838118" alt="number3">
+          </div>
+        </div>
+      </div>
+      <table class="spOnly p-sec03__text">
+        <tbody><tr>
+          <td>
+            <a href="https://lavanda.jp/products/lv22scs11">ミッドサマーフォトT</a>
+          </td>
+          <td>¥6,500(tax in)</td>
+        </tr>
+        <tr>
+          <td>
+            <a href="https://lavanda.jp/products/lv22sac36">ハートトップネックレス</a>
+          </td>
+          <td>¥2,900(tax in)</td>
+        </tr>
+        <tr>
+          <td>
+            <a href="https://lavanda.jp/products/lv22sac42">マンテルチェーンブレスレット</a>
+          </td>
+          <td>¥2,500(tax in)</td>
+        </tr>
+      </tbody>
+     </table>
+    </div>
+   <!--p-sec3-->
+    
+    <!--p-sec4-->
+    <div class="p-sec04">
+      <div class="p-sec04Inner">
+        <div class="p-sec04__top">
+          <div class="p-sec04__img">
+            <div class="p-sec04__number">
+              <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/number4-pc-min.png?v=1653838119" alt="number4">
+            </div>
+            <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/collection4-pc.jpg?v=1653838118" alt="collection4">
+          </div>
+          <table>
+            <tbody>
+              <tr>
+              <td>
+                <a href="https://lavanda.jp/products/lv22scs7">ボリュームフリルトップス</a>
+              </td>
+              <td>¥6,900(tax in)</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://lavanda.jp/products/lv22sp3">2WAYサスペンダーマリンパンツ</a>
+              </td>
+              <td>¥11,900(tax in)</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://lavanda.jp/products/lv22sac36">ハートトップネックレス</a>
+              </td>
+              <td>¥2,900(tax in)</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://lavanda.jp/products/lv22ssh2">グルカサンダル</a>
+              </td>
+              <td>¥9,500(tax in)</td>
+            </tr>
+          </tbody>
+         </table>
+        </div>
+      </div>
+    </div>
+    <!--p-sec4-->
+
+    <!--p-sec5-->
+    <div class="p-sec05">
+      <div class="p-sec05Inner">
+        <div class="p-sec05left">
+          <div class="p-sec05__img">
+            <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/collection5-left-pc.jpg?v=1653838118" alt="collection5-left">
+            <div class="p-sec05__number">
+              <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/number5-pc-min.png?v=1653838119" alt="number5">
+            </div>
+          </div>
+          <table class="pcOnly">
+            <tbody>
+              <tr>
+              <td>
+                <a href="https://lavanda.jp/products/lv22scs10">2wayカレッジスウェットT</a>
+              </td>
+              <td>¥6,500(tax in)</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="hhttps://lavanda.jp/products/lv22sac35">レジンフープピアスSET</a>
+              </td>
+              <td>¥2,900(tax in)</td>
+            </tr>
+          </tbody>
+         </table>
+        </div>
+       <div class="p-sec05right">
+         <img class="p-sec05__right--laundry" src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/section5_center_sp.jpg?v=1653838119" alt="section5_center">
+         <img class="p-sec05__right__uno" src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/collection5-right-pc-min.jpg?v=1653838118" alt="collection5-right">
+         <img class="p-sec05__lavanda-background" src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/05-lavanda-rogo-pc.png?v=1653838119" alt="05-lavanda-rogo">
+       </div>
+      </div>
+
+      <table class="spOnly p-sec05__sptext">
+        <tbody>
+          <tr>
+          <td>
+            <a href="https://lavanda.jp/products/lv22scs10">2wayカレッジスウェットT</a>
+          </td>
+          <td>¥6,500(tax in)</td>
+        </tr>
+        <tr>
+          <td>
+            <a href="https://lavanda.jp/products/lv22sac35">レジンフープピアスSET</a>
+          </td>
+          <td>¥2,900(tax in)</td>
+        </tr>
+      </tbody>
+     </table>
+     
+    </div>
+    <!--p-sec5-->
+
+    <!--p-sec6-->
+    <section class="p-sec06">
+      <div class="p-sec06Inner">
+        <div class="p-sec06__img">
+          <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/collection6-pc-min.jpg?v=1653838118" alt="collection6">
+          <table>
+            <tbody><tr>
+              <td>
+                <a href="https://lavanda.jp/products/lv22scs12">ボーダーバスクT</a>
+              </td>
+              <td>¥6,500(tax in)</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://lavanda.jp/products/lv22sp3">2WAYサスペンダーマリンパンツ</a>
+              </td>
+              <td>¥11,900(tax in)</td>
+            </tr>
+          </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    <!--p-sec6-->
+
+    <!--p-sec7-->
+    <div class="p-sec07">
+      <div class="p-sec07Inner">
+        <div class="p-sec07__left">
+          <img class="pcOnly" src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/collection7-pc-min.jpg?v=1653838118" alt="collection7">
+          <img class="spOnly" src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/collection07-sp.png?v=1653894525" alt="collection07-sp">
+        </div>
+        <div class="p-sec07__center pcOnly">
+          <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/number7-pc-min.png?v=1653838119" alt="number7">
+        </div>
+        <table class="p-sec07__right">
+          <tbody><tr>
+            <td>
+              <a href="https://lavanda.jp/products/lv22skt3">ラインポロニットトップス</a>
+            </td>
+            <td>¥7,900(tax in)</td>
+          </tr>
+          <tr>
+            <td>
+              <a href="https://lavanda.jp/products/lv22sp3">サスペンダーマリンパンツ</a>
+            </td>
+            <td>¥11,900(tax in)</td>
+          </tr>
+        </tbody>
+        </table>
+      </div>
+    </div>
+    <!--p-sec7-->
+ 
+    <!--p-sec8-->
+    <div class="p-sec08">
+      <div class="p-sec08Inner">
+        <div class="p-sec08__left">
+          <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/collection8-left-pc-min.jpg?v=1653838118" alt="collection8-left">
+        </div>
+        <div class="p-sec08__right">
+          <div class="p-sec08__text">
+            <img class="pcOnly" src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/08-text-pc.png?v=1653838119" alt="08-text">
+            <img class="spOnly" src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/summer_08_sp.svg?v=1653838118" alt="lavanda_08_sp">
+            <table class="pcOnly">
+              <tbody>
+                <tr>
+                <td>
+                  <a href="https://lavanda.jp/products/lv22scs6">プチハイネックリブトップス</a>
+                </td>
+                <td>¥6,900(tax in)</td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="https://lavanda.jp/products/lv22sac48">フラワーモチーフバンスクリップ</a>
+                </td>
+                <td>¥1,900(tax in)</td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="https://lavanda.jp/products/lv22sac31">クリアメタルフープピアス</a>
+                </td>
+                <td>¥2,900(tax in)</td>
+              </tr>
+            </tbody>
+            </table>
+            <div class="p-sec08__rightImg">
+              <img class="pcOnly" src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/collection8-right-pc-min.jpg?v=1653838118" alt="collection8-right">
+              <img class="spOnly p-sec08__rightImg__sp" src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/section_08_sp.jpg?v=1653838118" alt="section_08_sp">
+            </div>
+          </div>
+          <div class="p-sec08__car">
+            <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/number8-pc-min.png?v=1653838118" alt="number8-pc">
+          </div>
+        </div>
+      </div>
+
+      <table class="spOnly p-sec08--sp">
+        <div class="p-sec08__sp--summer spOnly">
+          <img class="summer" src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/summer_08_sp.svg?v=1653838118" alt="summer_08_sp">
+        </div>
+        <tbody>
+          <tr>
+          <td>
+            <a href="https://lavanda.jp/products/lv22scs6">プチハイネックリブトップス</a>
+          </td>
+          <td>¥6,900(tax in)</td>
+        </tr>
+        <tr>
+          <td>
+            <a href="https://lavanda.jp/products/lv22sac48">フラワーモチーフバンスクリップ</a>
+          </td>
+          <td>¥1,900(tax in)</td>
+        </tr>
+        <tr>
+          <td>
+            <a href="https://lavanda.jp/products/lv22sac31">クリアメタルフープピアス</a>
+          </td>
+          <td>¥2,900(tax in)</td>
+        </tr>
+      </tbody>
+      </table>
+
+    </div>
+    <!--p-sec8-->
+
+    <!--p-sec9-->
+    <section class="p-sec09">
+      <div class="p-sec09Inner">
+        <div class="p-sec09__left">
+          <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/collection09-left-min.jpg?v=1653838118" alt="collection09-left">
+          <table class="spOnly">
+            <tbody><tr>
+              <td>
+                <a href="https://lavanda.jp/products/lv22sb2">2WAYボウタイブラウス</a>
+              </td>
+              <td>¥7,900(tax in)</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://lavanda.jp/products/lv22ss3">フレアエスカルゴスカート</a>
+              </td>
+              <td>¥11,900(tax in)</td>
+            </tr>
+          </tbody>
+          </table>
+        </div>
+        <div class="p-sec09__right"> 
+          <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/number9-pc-min.jpg?v=1653838118" alt="number9-pc">
+          <table class="pcOnly">
+            <tbody><tr>
+              <td>
+                <a href="https://lavanda.jp/products/lv22sb2">2WAYボウタイブラウス</a>
+              </td>
+              <td>¥7,900(tax in)</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://lavanda.jp/products/lv22ss3">フレアエスカルゴスカート</a>
+              </td>
+              <td>¥11,900(tax in)</td>
+            </tr>
+          </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    <!--p-sec9-->
+
+   <!--p-banner-->
+    <section class="p-banner">
+      <div class="p-bannerInner">
+        <div class="p-banner__top pcOnly">
+          <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/p-banner-min.jpg?v=1653838118" alt="lavanda2022サマーコレクションバナー">
+        </div>
+        <div class="p-banner__btm pcOnly"> 
+          <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/p-banner__text-min.png?v=1653838119" alt="lavanda2022サマーコレクションバナー">
+        </div>
+        <div class="p-banner spOnly">
+          <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/p-banner-sp.png?v=1653895230" alt="p-banner-sp">
+        </div>
+      </div>
+    </section>
+    <!--p-banner-->
+
+  </div>
+
+</body>
+
+
+</html>
+
+<style>
+  
+  /*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+body {
+  line-height: 1; }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+nav ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+/* change colours to suit your needs */
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none; }
+
+/* change colours to suit your needs */
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold; }
+
+del {
+  text-decoration: line-through; }
+
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* change border colour to suit your needs */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0; }
+
+input, select {
+  vertical-align: middle; }
+
+html {
+  font-size: 62.5% !important;
+  display: block; }
+
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Noto Sans JP', sans-serif;
+  letter-spacing: 0.01em;
+  z-index: -9999;
+  color: #000; }
+
+.spOnly {
+  display: none !important; }
+  @media (max-width: 999px) {
+    .spOnly {
+      display: block !important; } }
+
+@media (max-width: 999px) {
+  .pcOnly {
+    display: none !important; } }
+
+a:hover {
+  opacity: 0.7; }
+
+a {
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  display: inline-block;
+  text-decoration: none; }
+
+li {
+  list-style: none; }
+
+img {
+  width: 100%; }
+
+tr {
+  line-height: 1.6;
+  font-size: 1.5rem; }
+
+table {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 0.9rem; }
+
+table a {
+  display: inline-block;
+  font-size: 1.2rem;
+  color: #000; }
+  @media (max-width: 999px) {
+    table a {
+      font-size: 1rem; } }
+
+td {
+  font-size: 1.3rem; }
+
+.p-summer2022 .p-sec01Inner {
+  position: relative; }
+
+.p-summer2022 .p-sec01 {
+  padding: 18.5rem 0 8.9rem; }
+  @media (max-width: 999px) {
+    .p-summer2022 .p-sec01 {
+      padding: 10.9rem 0 7.5rem; } }
+
+.p-summer2022 .p-sec01__img {
+  max-width: 30.5rem;
+  position: relative;
+  margin: 0 auto; }
+  @media (max-width: 999px) {
+    .p-summer2022 .p-sec01__img {
+      max-width: 50.5rem;
+      width: 70%; } }
+
+.p-summer2022 .p-sec__price {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 0.9rem; }
+
+.p-summer2022 .p-sec01__number {
+  position: absolute;
+  left: -10%;
+  top: -2.5rem;
+  display: inline-block;
+  max-width: 6.7rem; }
+  @media (max-width: 999px) {
+    .p-summer2022 .p-sec01__number {
+      left: -11%;
+      top: -5rem;
+      max-width: 11.7rem; } }
+
+.p-summer2022 .p-sec02 {
+  padding-bottom: 16.7rem; }
+
+.p-summer2022 .p-sec02Inner {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+  @media (max-width: 999px) {
+    .p-summer2022 .p-sec02Inner {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column; } }
+
+.p-summer2022 .p-sec02__first {
+  max-width: 38rem;
+  width: 100%;
+  padding-left: 13rem; }
+  @media (max-width: 999px) {
+    .p-summer2022 .p-sec02__first {
+      max-width: 54rem;
+      padding-left: 0;
+      width: 80%; } }
+
+.p-summer2022 .p-sec02__second {
+  max-width: 18.7rem;
+  width: 100%;
+  margin-top: 35rem;
+  padding: 0 1.5rem 0 7.3rem; }
+  @media (max-width: 999px) {
+    .p-summer2022 .p-sec02__second {
+      position: relative;
+      width: 60%;
+      margin-left: auto;
+      margin-top: 3.4rem;
+      padding: 0;
+      margin-right: 5rem;
+      max-width: 34rem; } }
+
+.p-summer2022 .p-sec02__third {
+  max-width: 3.9rem;
+  width: 100%; }
+
+.p-summer2022 .p-sec02__third.spOnly {
+  position: absolute;
+  top: 0;
+  left: -30%;
+  max-width: 7rem; }
+
+.p-summer2022 .p-sec02__fourth {
+  max-width: 32.8rem;
+  width: 100%;
+  margin-left: 4.7rem;
+  margin-top: 15rem; }
+  @media (max-width: 999px) {
+    .p-summer2022 .p-sec02__fourth {
+      margin-left: 0;
+      max-width: unset;
+      margin-top: 8rem;
+      margin-bottom: 3rem; } }
+
+.p-summer2022 table.spOnly.p-sec02__text {
+  padding: 0 5rem; }
+
+.p-summer2022 table.spOnly.p-sec02__text td {
+  margin-right: 1rem;
+  display: inline-block; }
+
+.p-summer2022 .p-sec03Inner {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 86.5rem;
+  margin: 0 auto; }
+  @media (max-width: 999px) {
+    .p-summer2022 .p-sec03Inner {
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between; } }
+
+.p-summer2022 .p-sec03__first {
+  max-width: 8.35rem;
+  width: 100%; }
+  @media (max-width: 999px) {
+    .p-summer2022 .p-sec03__first {
+      position: relative; } }
+
+.p-summer2022 .p-sec03__second {
+  max-width: 20rem;
+  width: 100%;
+  margin: 0 8.6rem 0 10.3rem;
+  margin-top: auto; }
+  @media (max-width: 999px) {
+    .p-summer2022 .p-sec03__second {
+      margin: 0;
+      margin-left: auto; } }
+
+.p-summer2022 .p-sec03__ttlImg {
+  padding-bottom: 8.5rem; }
+
+.p-summer2022 .p-sec03__third img {
+  padding-bottom: 2rem; }
+
+.p-summer2022 .p-sec03__number.spOnly {
+  position: absolute;
+  top: -7.5rem;
+  max-width: 7rem;
+  left: -1rem; }
+
+.p-summer2022 table.spOnly.p-sec03__text {
+  padding: 0 6rem; }
+
+.p-summer2022 .p-sec03__third {
+  max-width: 32rem;
+  width: 100%;
+  padding-right: 2.15rem; }
+  @media (max-width: 999px) {
+    .p-summer2022 .p-sec03__third {
+      width: 100%;
+      padding-right: 0;
+      margin-top: -10rem;
+      max-width: 27rem; } }
+
+.p-summer2022 .p-sec03__lefttext {
+  position: absolute;
+  max-width: 3rem; }
+
+.p-summer2022 .p-sec03__fourth {
+  max-width: 6rem;
+  width: 100%; }
+
+.p-summer2022 .p-sec03__second.p-sec03__ttlImg.spOnly {
+  position: relative;
+  padding-bottom: 0 !important; }
+
+.p-summer2022 .p-sec03__lefttext {
+  position: absolute;
+  left: -4rem; }
+
+.p-summer2022 .p-sec04 {
+  padding-top: 15.7rem; }
+
+.p-summer2022 .p-sec04__top table {
+  max-width: 31.5rem;
+  margin: 0 auto;
+  margin-top: 0.9rem; }
+
+.p-summer2022 .p-sec04__img {
+  position: relative;
+  max-width: 31.5rem;
+  margin: 0 auto; }
+  @media (max-width: 999px) {
+    .p-summer2022 .p-sec04__img {
+      padding: 0 2rem; } }
+
+.p-summer2022 .p-sec04__number {
+  position: absolute;
+  max-width: 6.8rem;
+  left: -10%;
+  top: 0; }
+  @media (max-width: 999px) {
+    .p-summer2022 .p-sec04__number {
+      max-width: 9rem;
+      left: 0;
+      top: -5%; } }
+
+.p-summer2022 .p-sec04__img {
+  position: relative;
+  text-align: center; }
+
+.p-summer2022 .p-sec05 {
+  padding-top: 25rem;
+  padding-bottom: 20rem; }
+  @media (max-width: 999px) {
+    .p-summer2022 .p-sec05 {
+      padding-top: 0;
+      padding-bottom: 0; } }
+
+.p-summer2022 .p-sec05__img {
+  max-width: 20rem; }
+
+.p-summer2022 .p-sec05__img {
+  width: 100%;
+  position: relative;
+  margin-bottom: 4.5rem; }
+  @media (max-width: 999px) {
+    .p-summer2022 .p-sec05__img {
+      z-index: 2; } }
+
+.p-summer2022 .p-sec05left {
+  position: relative;
+  padding-right: 10.8rem; }
+  @media (max-width: 999px) {
+    .p-summer2022 .p-sec05left {
+      padding-right: 0; } }
+
+.p-summer2022 .p-sec05__img > img {
+  max-width: 25rem; }
+  @media (max-width: 999px) {
+    .p-summer2022 .p-sec05__img > img {
+      max-width: unset; } }
+
+.p-summer2022 .p-sec05__number {
+  max-width: 11.2rem;
+  width: 100%;
+  position: absolute;
+  bottom: -7%;
+  left: -40%; }
+  @media (max-width: 999px) {
+    .p-summer2022 .p-sec05__number {
+      max-width: 6rem;
+      bottom: -45%;
+      left: 50%; } }
+
+.p-summer2022 .p-sec05Inner {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+  @media (max-width: 999px) {
+    .p-summer2022 .p-sec05Inner {
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      margin: 25rem 0 13rem; } }
+
+.p-summer2022 .p-sec05right {
+  max-width: 37.5rem;
+  width: 100%;
+  position: relative; }
+
+.p-summer2022 .p-sec05__right--laundry {
+  position: absolute;
+  top: -14rem;
+  max-width: 23rem; }
+  @media (max-width: 999px) {
+    .p-summer2022 .p-sec05__right--laundry {
+      position: absolute;
+      top: -1rem;
+      top: -10rem;
+      right: 60%;
+      max-width: 20rem; } }
+
+.p-summer2022 .p-sec05__right__uno {
+  position: absolute;
+  max-width: 26.5rem;
+  bottom: -16rem;
+  left: 13rem; }
+  @media (max-width: 999px) {
+    .p-summer2022 .p-sec05__right__uno {
+      bottom: -8rem;
+      right: 0;
+      left: unset;
+      max-width: 20rem; } }
+
+.p-summer2022 table.spOnly.p-sec05__sptext {
+  padding: 0 7rem; }
+
+.p-summer2022 .p-sec05__lavanda-background {
+  z-index: -1;
+  right: -18rem;
+  top: -5rem;
+  position: absolute;
+  max-width: 33.5rem; }
+  @media (max-width: 999px) {
+    .p-summer2022 .p-sec05__lavanda-background {
+      right: 0;
+      top: -18rem; } }
+
+.p-summer2022 .p-sec05left td:first-of-type {
+  padding-right: 1rem; }
+
+.p-summer2022 table.spOnly.p-sec05__sptext td {
+  padding-right: 0.5rem; }
+
+.p-summer2022 .p-sec06 {
+  padding-top: 10.5rem; }
+  @media (max-width: 999px) {
+    .p-summer2022 .p-sec06 {
+      padding-top: 7.2rem; } }
+
+.p-summer2022 .p-sec06__img {
+  max-width: 31.7rem;
+  margin: 0 auto; }
+  @media (max-width: 999px) {
+    .p-summer2022 .p-sec06__img {
+      margin: unset;
+      margin-left: auto;
+      width: 80%; } }
+
+.p-summer2022 .p-sec07Inner {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+  @media (max-width: 999px) {
+    .p-summer2022 .p-sec07Inner {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column; } }
+
+.p-summer2022 .p-sec07 {
+  padding-top: 11.65rem;
+  padding-bottom: 2.7rem; }
+
+.p-summer2022 .p-sec07__left {
+  max-width: 62.2rem;
+  width: 100%; }
+  @media (max-width: 999px) {
+    .p-summer2022 .p-sec07__left {
+      width: 90%; } }
+
+.p-summer2022 .p-sec07__right {
+  width: 30%;
+  display: inline-block;
+  padding-top: 1rem;
+  margin: initial; }
+  @media (max-width: 999px) {
+    .p-summer2022 .p-sec07__right {
+      width: 100%;
+      text-align: center;
+      padding: 2rem; } }
+
+.p-summer2022 table.p-sec07__right td {
+  padding-right: 1rem; }
+
+.p-summer2022 .p-sec07__center {
+  max-width: 2.3rem;
+  padding: 1rem 4.4rem 0 1.5rem; }
+
+.p-summer2022 .p-sec08Inner {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%; }
+
+.p-summer2022 .p-sec08__left {
+  max-width: 30rem;
+  width: 100%;
+  padding-left: 42rem;
+  padding-top: 25rem;
+  padding-right: 7.5rem; }
+  @media (max-width: 999px) {
+    .p-summer2022 .p-sec08__left {
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: 0;
+      margin-top: 8rem;
+      margin-right: 2rem; } }
+
+.p-summer2022 table.spOnly.p-sec08--sp {
+  padding: 0 5rem;
+  max-width: 50rem;
+  margin: 0 auto; }
+
+.p-summer2022 .p-sec08__right {
+  position: relative;
+  width: 100%; }
+
+.p-summer2022 .p-sec08__rightImg {
+  max-width: 31.5rem;
+  width: 100%;
+  position: absolute;
+  right: 0;
+  top: 0; }
+  @media (max-width: 999px) {
+    .p-summer2022 .p-sec08__rightImg {
+      z-index: -2; } }
+
+.p-summer2022 .p-sec08__car {
+  max-width: 21rem;
+  width: 100%;
+  position: absolute;
+  bottom: 0; }
+
+.p-summer2022 .p-sec08__text {
+  width: 100%;
+  max-width: 31rem;
+  margin-top: -18rem;
+  z-index: 10; }
+  @media (max-width: 999px) {
+    .p-summer2022 .p-sec08__text {
+      margin-left: -2.5rem;
+      margin-top: 0;
+      max-width: 1rem; } }
+
+.p-summer2022 .p-sec08__sp--summer {
+  text-align: center;
+  margin: 2rem 0; }
+
+.p-summer2022 .summer {
+  max-width: 50%;
+  display: inline-block; 
+}
+
+.p-summer2022 .p-sec08__text table {
+  display: inline-block;
+  padding-top: 3.7rem;
+  margin: unset; }
+
+.p-summer2022 .p-sec08__text table td:first-of-type {
+  padding-right: 1rem; }
+
+.p-summer2022 .p-sec09 {
+  padding-top: 22.3rem; }
+  @media (max-width: 999px) {
+    .p-summer2022 .p-sec09 {
+      padding-top: 8.95rem; } }
+
+.p-summer2022 .p-sec09Inner {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+  @media (max-width: 999px) {
+    .p-summer2022 .p-sec09Inner {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: reverse;
+      -webkit-flex-direction: column-reverse;
+          -ms-flex-direction: column-reverse;
+              flex-direction: column-reverse;
+      margin-bottom: 9rem; } }
+
+.p-summer2022 .p-sec09__right {
+  padding-left: 6.75rem; }
+  @media (max-width: 999px) {
+    .p-summer2022 .p-sec09__right {
+      padding-left: 0; } }
+
+.p-summer2022 .p-sec09__right img {
+  max-width: 35rem;
+  width: 100%; }
+  @media (max-width: 999px) {
+    .p-summer2022 .p-sec09__right img {
+      max-width: unset;
+      margin-bottom: 4rem; } }
+
+.p-summer2022 .p-sec09__left img {
+  max-width: 35rem;
+  width: 100%; }
+
+@media (max-width: 999px) {
+  .p-summer2022 .p-sec09__left {
+    margin-left: auto;
+    padding-left: 12rem; } }
+
+.p-summer2022 .p-banner {
+  padding-top: 22rem;
+  padding-bottom: 33.5rem; }
+  @media (max-width: 999px) {
+    .p-summer2022 .p-banner {
+      padding-top: 0;
+      padding-bottom: 2rem; } }
+
+.p-summer2022 .p-banner__top {
+  max-width: 38.9rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  padding-bottom: 2.9rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+.p-summer2022 .p-banner__btm {
+  max-width: 17.2rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem; }
+
+.p-kv {
+  position: relative;
+  overflow: hidden;
+  height: 100vh; }
+
+.p-main_img {
+  width: 100%;
+  height: 100vh;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  left: 0;
+  top: 0; }
+/*# sourceMappingURL=style.css.map */
+  
+</style>

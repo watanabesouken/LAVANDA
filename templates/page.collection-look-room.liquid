@@ -1,0 +1,86 @@
+<div class="page-tpl">
+  <div class="container fix">
+    <div class="br-fix">
+    	{% include 'breadcrumb' %}
+    </div>
+
+    <header class="page-header">
+      <h2>
+        {% include 'multilang' with page.title %}
+      </h2>      
+    </header>
+    <div class="colection-look clearfix">
+      <div class="look-block04 clearfix">
+        <div class="look-image-img05">
+          <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/sp__8151053.jpg?v=1591754257">
+          <div class="look_image-credit"><p>ツイストヘアバンド　¥1,800+tax</p><p>ロングシャツワンピース　¥8,000+tax</p></div>
+        </div>
+      </div>        
+      <div class="look-block08 clearfix">
+        <div class="look-image-img10">
+          <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/pcmain_01.jpg?v=1591638282">
+          <div class="look_image-credit"><p>ツイストヘアバンド　¥1,800+tax</p><p>ロングシャツワンピース　¥8,000+tax</p></div>
+        </div>
+      </div>      
+      <div class="look-block11 clearfix">
+        <div class="look-image-img15">
+          <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/pc__8159244.jpg?v=1591636614">
+          <div class="look_image-credit"><p>ツイストヘアバンド　¥1,800+tax</p><p>ロングシャツワンピース　¥8,000+tax</p><p>リブパンツ　¥6,000+tax</p></div>
+        </div>
+      </div>
+      <div class="look-block13 clearfix">
+        <div class="look-image-img17">
+          <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/collectiontop_02_1.jpg?v=1591774021">
+          <div class="look_image-credit"><p>ロングシャツワンピース　¥8,000+tax</p></div>
+        </div>
+      </div>      
+      <div class="look-block04 clearfix">
+        <div class="look-image-img05">
+          <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/sp__8151051.jpg?v=1591754257">
+          <div class="look_image-credit"><p>ロングシャツワンピース　¥8,000+tax</p><p>リブパンツ　¥6,000+tax</p></div>
+        </div>
+      </div>                 
+      <div class="look-block07 clearfix">
+        <div class="look-image-img09">
+          <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/sp__8159242.jpg?v=1591754257">
+          <div class="look_image-credit"><p>ロングシャツワンピース　¥8,000+tax</p><p>リブパンツ　¥6,000+tax</p></div>
+        </div>
+      </div>  
+      <div class="look-block13 clearfix">
+        <div class="look-image-img17">
+          <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/pc__8159240.jpg?v=1591754257">
+          <div class="look_image-credit"><p>ロングシャツワンピース　¥8,000+tax</p><p>リブパンツ　¥6,000+tax</p></div>
+        </div>
+      </div>
+      <div class="look-block13 clearfix">
+        <div class="look-image-img17">
+          <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/collection_08_1.jpg?v=1591776967">
+          <div class="look_image-credit"><p>リブパンツ　¥6,000+tax</p></div>
+        </div>
+      </div>
+      <div class="look-block13 clearfix">
+        <div class="look-image-img17">
+          <img src="https://cdn.shopify.com/s/files/1/0322/8116/5869/files/collection_09_1.jpg?v=1591777021">
+          <div class="look_image-credit"><p>ロングシャツワンピース　¥8,000+tax</p></div>
+        </div>
+      </div>
+    </div>
+
+    {% comment %}
+    Regular page content goes here.
+    {% endcomment %}
+
+    {% if settings.enable_multilang and page.content contains '[lang2]' %}
+    <div class="rte lang1">
+      {{ page.content | split: '[lang2]' | first }}
+    </div>
+    <div class="rte lang2">
+      {{ page.content | split: '[lang2]' | last }}
+    </div>
+    {% else %}
+    <div class="rte">
+      {{ page.content | split: '[lang2]' | first }}
+    </div>
+    {% endif %}
+  </div>
+</div>

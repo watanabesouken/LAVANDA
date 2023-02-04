@@ -1,0 +1,490 @@
+/***** 汎用Class *****/
+.text-center{
+  text-align:center;  
+}
+.margin_right{
+  margin-right:13vw;
+  @media (max-width: 767px){
+    margin-right:0px;
+  }  
+}
+.margin_left{
+  margin-left:13vw;
+  @media (max-width: 767px){
+    margin-left:0px;
+  }  
+}
+
+  /* font */
+@font-face {
+font-family: 'SourceSerifVariable-Roman';
+  src: url(' //cdn.shopify.com/s/files/1/0322/8116/5869/t/86/assets/SourceSerifVariable_Roman.otf?v=72811367918981453781666782084 ') format('opentype');
+}
+@font-face {
+font-family: 'DINProLight';
+  src: url(' //cdn.shopify.com/s/files/1/0322/8116/5869/t/86/assets/DINPro_Light.otf?v=119112461195735112861666781965 ') format('opentype');
+}
+@font-face {
+font-family: 'A_OTF_GothicBBBPr5_Medium';
+  src: url(' //cdn.shopify.com/s/files/1/0322/8116/5869/t/86/assets/A_OTF_GothicBBBPr5_Medium.otf?v=59497445258728970041666781952 ') format('opentype');
+}
+@font-face {
+font-family: 'A_OTF_GothicBBBPro_Medium';
+  src: url(' //cdn.shopify.com/s/files/1/0322/8116/5869/t/86/assets/A_OTF_GothicBBBPro_Medium.otf?v=181813460448290268751666781953 ') format('opentype');
+}
+@font-face {
+font-family: 'A_OTF_MidashiGoPro_MB31';
+  src: url(' //cdn.shopify.com/s/files/1/0322/8116/5869/t/86/assets/A_OTF_MidashiGoPro_MB31.otf?v=134408103300665628041666781954 ') format('opentype');
+}
+@font-face {
+font-family: 'RageItalicStd';
+  src: url(' //cdn.shopify.com/s/files/1/0322/8116/5869/t/86/assets/RageItalicStd.otf?v=34925358574824281601666782070 ') format('opentype');
+}
+  /*  pc or sp  */
+.pc{
+  display:block;
+}
+.sp{
+  display:none;
+}
+@media (max-width: 767px){
+  .pc{
+    display:none;
+  }
+  .sp{
+    display:block;
+  }
+}
+
+/***** 固有Class for PC *****/
+.container-kokkaku{
+  width:90%;
+  margin:0 auto;
+}
+
+.top-text{
+  font-family:A_OTF_GothicBBBPro_Medium;
+  font-weight: normal;
+  font-style: normal;
+  line-height:2.5;
+  font-size:1.5vw;
+  margin-top:40px;
+  margin-bottom: 130pt; 
+  color:#808080;
+}
+
+.kokkaku-type-wrapper{
+  margin:20pt auto;
+  margin-bottom: 100px;
+  display:flex;
+  width: 80%;
+  .kokkaku-text {
+    h2{
+      margin-right: auto;
+      margin-left: auto;
+      font-family: SourceSerifVariable-Roman;
+      font-size: 2.2vw;
+      line-height: 1.8;
+      font-weight: bold;
+      letter-spacing: normal;
+    }
+    h3{
+      margin-right: auto;
+      margin-left: auto;
+      font-family: A_OTF_MidashiGoPro_MB31;
+      font-size: 2.5vw;
+      line-height: 1;
+      font-weight: normal;
+      max-width: 100%;
+      border-right: solid;
+      border-left: solid;
+      letter-spacing: -1.5pt;
+    }
+    p{
+      font-family: A_OTF_GothicBBBPr5_Medium;
+      font-size: 1.14vw;
+      line-height: 2;
+      font-weight: normal;
+      letter-spacing: -0.5pt;
+    }
+  }
+  .straight{
+    width:33%;
+    margin:0 2%;
+    img{
+    width: 90%;
+    margin: 0 auto;
+    }
+    h2{
+      color:#BEA3A5;
+    }
+    h3{
+      color:#BEA3A5;
+      border-color:#BEA3A5;
+    }
+    p{
+      color:#808080;
+    }  
+  }
+  .wave{
+    width:33%;
+    margin:0 2%;
+    img{
+    width: 90%;
+    margin: 0 auto;
+    }
+    h2,h3{
+      color:#9C9FB6;
+    }
+    p{
+      color:#808080;
+    }  
+  }
+  .natural{
+    width:33%;
+    margin:0 2%;
+    img{
+    width: 90%;
+    margin: 0 auto;
+    }
+    h2,h3{
+      color:#897D8C;
+    }
+    p{
+      color:#808080;
+    }  
+  }
+  .check-button{
+    margin: 30px auto;
+    max-width: 35%;
+    a{
+      color: #FFFFFF;
+      font-family: DINProLight;
+      font-size: 1.2vw;
+      line-height: 1.4;
+      display: block;
+      transition: background-color .2s;      
+    }
+    a:hover {
+      opacity: 0.5;
+    }
+    .relative{
+      position:relative
+    }
+    .straight-color{
+      background-color:#BEA3A5;
+      border: solid 2px #BEA3A5;
+    }
+    .wave-color{
+      background-color:#9C9FB6;
+      border: solid 2px #9C9FB6;
+    }
+    .natural-color{
+      background-color:#897D8C;
+      border: solid 2px #897D8C;
+    }
+    .check-button-shadow{
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+      z-index: -1;
+    }
+  }
+}
+
+.kokkaku-description-wrapper{
+  margin-top:40pt;
+  margin-bottom:20pt;  
+  .row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+  }
+  h2{
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 0pt;
+    margin-top: 20pt;
+    font-family: A_OTF_MidashiGoPro_MB31;
+    font-size: 2vw;
+    line-height: 2;
+    font-weight: normal;
+    letter-spacing: -0.5pt;
+  }
+  p{
+	font-family: A_OTF_GothicBBBPr5_Medium;
+    font-size: 1.2vw;
+    line-height: 2;
+    font-weight: normal;
+    letter-spacing: -1pt;
+  }
+  .fashion-point{
+	margin: 0pt auto;
+    padding: 0pt 0pt;
+    margin-right:auto;
+    margin-bottom: 70pt;
+    width:60%;
+  }
+  .styling{
+	margin: 0pt auto;
+    padding: 30pt 0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:90%;
+    img{
+      width:80%;
+    }
+    h2{
+      margin-right: auto;
+      margin-left: auto;
+      margin-bottom: 1em;
+      font-family: SourceSerifVariable-Roman;
+      font-size: 2vw;
+      line-height: 1;
+      font-weight: bold;
+    }
+    h3{
+      margin: 0pt auto;
+      font-family: SourceSerifVariable-Roman;
+      font-size: 2vw;
+      line-height: 3.5;
+      font-weight: normal;
+    }
+    p{
+      font-family: A_OTF_GothicBBBPr5_Medium;
+      font-size: 1.4vw;
+      line-height: 2;
+      font-weight: normal;
+      letter-spacing: -2pt;
+    }
+    .styling-img {
+      width: 50%;
+    }
+    .styling-text{
+      width:31%;
+      .item-name{
+        p{
+          font-size: 1.1vw;
+          line-height: 2;
+          letter-spacing: -0.5pt;
+        }
+      }
+    }    
+  }
+  .title{
+    img{
+      width:50%;
+    }
+  }
+  .straight {
+    padding-bottom: 120pt;
+    h2{
+      color:#BEA3A5;
+    }
+    h3{
+      color:#BEA3A5;
+    }
+    p{
+      color:#808080;
+    }
+    .border{
+      max-width:0%;
+      border-left:solid;
+      border-color:#BEA3A5;
+    }
+  }
+  .wave {
+    padding-bottom: 120pt;
+    h2{
+      color:#9C9FB6;
+    }
+    h3{
+      color:#9C9FB6;
+    }
+    p{
+      color:#808080;
+    }
+    .border{
+      max-width:0%;
+      border-left:solid;
+      border-color:#9C9FB6;
+    }
+  }   
+  .natural {
+    h2{
+      color:#897D8C;
+    }
+    h3{
+      color:#897D8C;
+    }
+    p{
+      color:#808080;
+    }
+    .border{
+      max-width:0%;
+      border-left:solid;
+      border-color:#897D8C;
+    }
+  }
+}
+
+/* 固有class for SP */
+@media (max-width: 767px){
+  .container-kokkaku{
+    width:100%;
+  }
+  
+  .top-text{
+	line-height: 2.3;
+    font-size: 3vw;
+    margin-top: 50pt;
+    margin-bottom: 170pt;  
+  }
+  
+  .kokkaku-type-wrapper{
+    display:block;
+    margin:0 auto;
+    width: 100%;
+    .straight{
+      display:flex;
+      width:90%;
+      margin:0pt auto;
+      justify-content: center;
+      align-items: center;
+      img{
+        width:100%;
+      }
+    }
+    .wave{
+      display:flex;
+      width:90%;
+      margin:30pt auto;
+      justify-content: center;
+      align-items: center;  
+      img{
+        width:100%;
+      }      
+    }
+    .natural{
+      display:flex;
+      width:90%;
+      margin:30pt auto;
+      justify-content: center;
+      align-items: center; 
+      img{
+        width:100%;
+      }      
+    }
+    .kokkaku-img{
+      width:70%;
+    }
+    .kokkaku-text-wrapper{
+      width:100%;
+      h2{
+        font-size: 4vw;
+        line-height: 1;
+      }
+      h3{
+        max-width: 80%;
+        font-size: 5vw;
+        line-height: 1;
+      }
+      p{
+        font-size: 3.4vw;
+        line-height: 1.8;
+        letter-spacing: -1.4pt;
+      }
+      .check-button{
+        max-width: 30%;
+        margin: 20px auto;
+        height:50%;
+        a{
+          font-size:2.5vw;
+          line-height:1.6;
+        }
+      }
+    }
+  }
+  
+  .kokkaku-description-wrapper{
+    .row {
+      display: block;
+    }
+    .column {
+      display: block;
+    }
+    h2{
+      margin-top: 20pt;
+      margin-bottom:5pt;
+      font-size: 4.8vw;
+      line-height: 1;
+    }
+    p{
+      font-size: 3vw;
+      line-height: 2;
+    }
+    .fashion-point{
+      margin: 0pt auto;
+      padding-bottom: 0pt;
+      padding-top: 0pt;
+      margin-right: auto;
+      margin-bottom: 50pt;
+      width:75%;
+    }    
+    .styling{
+      display: block;
+      padding: 20pt 0;
+      h2{
+        font-size: 4vw;
+        line-height: 1.5;
+      }
+      h3{
+        font-size: 6vw;
+        line-height: 3;
+      }
+      p{
+        font-size: 4vw;
+    	line-height: 1.8;
+        letter-spacing: -1.5pt;
+      }
+      .styling-img {
+        width: initial;
+      }
+      .styling-text{
+        width:initial;
+        .item-name{
+          p{
+            font-size: 3.5vw;
+            line-height: 1.8;
+            letter-spacing: -0.5pt;
+          }
+        }
+      }	
+    }
+    .title{
+      img{
+        width:70%;
+      }    
+    }
+    .straight{
+      padding-bottom: 100pt;
+    }
+    .wave{
+      padding-bottom: 100pt;
+    }
+    .natural{
+      padding-bottom: 50pt;
+    }    
+  }
+}
